@@ -167,7 +167,6 @@
           </section>
         </div>
         <form class="ms2_form js-toggle-hidden" id="msOrder" method="post">
-          <input type="hidden" name="cdek_city_id">
           <div class="container">
             <section class="checkout__section">
               <h3 class="checkout__h">Данные получателя</h3>
@@ -237,8 +236,9 @@
                 <div class="checkout__section__col">
                   <div class="input-group _required _loading js-toggle-hidden__item" data-delivery="1">
                     <label for="checkout_sdek_city">Город доставки</label>
-                    <input class="js-cdek-autocomplete" type="text" id="checkout_sdek_city" name="sdek_city" retuired><span class="input-group__msg">Начните набирать название города.</span>
+                    <input class="js-cdek-autocomplete" type="text" id="checkout_sdek_city" name="sdek_city"><span class="input-group__msg">Начните набирать название города.</span>
                   </div>
+                  <input type="_hidden" name="cdek_city_id">
                   <div class="input-group _checkbox">
                     <label class="checkbox">
                       <input type="radio" checked name="sdek_tariff_id"><span class="checkbox__text">Доставка «до склада»</span>
@@ -249,7 +249,7 @@
                   </div>
                   <div class="input-group _required">
                     <label for="checkout_country">Страна</label>
-                    <input type="text" id="checkout_country" name="country" value="Россия" required disabled>
+                    <input type="text" id="checkout_country" name="country" value="Россия" disabled>
                   </div>
                   <div class="input-group">
                     <label for="checkout_region">Область, край, штат</label>

@@ -17,7 +17,7 @@ var app = {
     fancyOptions: {
         autoFocus: false,
         touch: false,
-//        baseClass: 'popup',
+        //        baseClass: 'popup',
         closeExisting: true,
         autoFocus: false,
         backFocus: false,
@@ -45,8 +45,8 @@ var app = {
         window.app = app;
 
         // Init forms
-//        this.forms = forms;
-//        this.forms.init.call(this);
+        //        this.forms = forms;
+        //        this.forms.init.call(this);
 
         app.document.ready(function () {
             app.initHeaderCart();
@@ -73,10 +73,6 @@ var app = {
         app.document.on(app.resizeEventName, function () {
         });
 
-        // Antispam
-        setTimeout(function () {
-            $('input[name="email3"],input[name="email"],input[name="text"]').attr('value', '').val('');
-        }, 5000);
     },
 
     /**
@@ -85,7 +81,7 @@ var app = {
     initSelect() {
         if (!$('.js-select').length)
             return;
-        $('.js-select').each(function(){
+        $('.js-select').each(function () {
             let choices = new Choices($(this)[0], {
                 searchEnabled: false,
                 itemSelectText: '',
@@ -208,15 +204,15 @@ var app = {
     initRange() {
         $('.js-range').each(function (index, elem) {
             let slider = $(elem).find('.js-range__target')[0],
-                    $inputs = $(elem).find('input'),
-                    from = $inputs.first()[0],
-                    to = $inputs.last()[0],
-                    $text = $(elem).find('.js-range__text'),
-                    fromText = $text.first()[0],
-                    toText = $text.last()[0];
+                $inputs = $(elem).find('input'),
+                from = $inputs.first()[0],
+                to = $inputs.last()[0],
+                $text = $(elem).find('.js-range__text'),
+                fromText = $text.first()[0],
+                toText = $text.last()[0];
             if (slider && from && to && fromText && toText) {
                 var min = parseInt(from.value) || 0,
-                        max = parseInt(to.value) || 0;
+                    max = parseInt(to.value) || 0;
                 noUiSlider.create(slider, {
                     start: [
                         min,
@@ -294,9 +290,9 @@ var app = {
     initQty() {
         $('.js-qty').each(function () {
             let $plus = $(this).find('.js-qty__plus'),
-                    $minus = $(this).find('.js-qty__minus'),
-                    $input = $(this).find('.js-qty__input'),
-                    min = parseInt($input.attr('min')) || 0, max = parseInt($input.attr('max')) || 0;
+                $minus = $(this).find('.js-qty__minus'),
+                $input = $(this).find('.js-qty__input'),
+                min = parseInt($input.attr('min')) || 0, max = parseInt($input.attr('max')) || 0;
             $plus.on('click', function (e) {
                 let newVal = parseInt($input.val()) + 1;
                 if (!max || (newVal <= max)) {
@@ -325,6 +321,9 @@ var app = {
         }
         require('libs/jquery.auto-complete.js');
         let xhr;
+        $input.on('keydown', function(e) {
+            if (e.keyCode == 13) return false;
+        });
         $input.autoComplete({
             minChars: 3,
             source: function (term, response) {
@@ -336,9 +335,9 @@ var app = {
                 xhr = $.ajax({
                     dataType: 'json',
                     url: '//api.cdek.ru/city/getListByTerm/jsonp.php?callback=?',
-                    data: {q: term},
+                    data: { q: term },
                     success: function (data) {
-//                        console.log(data);
+                        //                        console.log(data);
                         let suggestions = [];
                         if (data.geonames) {
                             data.geonames.forEach((el) => {
@@ -358,21 +357,30 @@ var app = {
             renderItem: function (item, search) {
                 search = search.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
                 let re = new RegExp('(' + search.split(' ').join('|') + ')', 'gi');
-                return `<div class="autocomplete-suggestion" data-id="${item.id}" data-val="${item.cityName}">` + item.cityName.replace(re, '<b>$1</b>') + '</div>';
+                return `<div class="autocomplete-suggestion"
+                    data-id="${item.id}"
+                    data-country="${item.countryName}"
+                    data-region="${item.regionName}"
+                    data-city="${item.cityName}"
+                    data-val="${item.cityName}">` + item.cityName.replace(re, '<b>$1</b>') + '</div>';
             },
             onSelect: function (e, term, item) {
                 $('[name="cdek_city_id"]').val(item.data('id')).trigger('change');
+                $('[name="country"]').val(item.data('country')).trigger('change');
+                $('[name="region"]').val(item.data('region')).trigger('change');
+                $('[name="city"]').val(item.data('city')).trigger('change');
                 $input.attr('data-selected', 'true');
+                return false;
             }
-//        }).on('keypress', function(e) {
-//            let code = e.keyCode || e.which;
-//            if (code === 13) {
-//                $(this).blur();
-//                return false;
-//            }
-        }).on('keyup', function() {
+            //        }).on('keypress', function(e) {
+            //            let code = e.keyCode || e.which;
+            //            if (code === 13) {
+            //                $(this).blur();
+            //                return false;
+            //            }
+        }).on('keyup', function () {
             $(this).attr('data-selected', 'false');
-        }).on('blur', function() {
+        }).on('blur', function () {
             if (!$(this).attr('data-selected') || $(this).attr('data-selected') !== 'true') {
                 $(this).val('').trigger('change');
                 $('[name="cdek_city_id"]').val('').trigger('change');
@@ -382,7 +390,7 @@ var app = {
 
     initToggleHidden() {
         let className = 'hidden';
-        this.document.on('click', '.js-toggle-hidden__toggler', function(){
+        this.document.on('click', '.js-toggle-hidden__toggler', function () {
             let targetSelector = $(this).data('toggle');
             if (targetSelector) {
                 let $items = $(this).parents('.js-toggle-hidden').find('.js-toggle-hidden__item').addClass(className);
@@ -403,7 +411,7 @@ var app = {
         show();
         app.window.on('scroll', show);
         $btn.on('click', function () {
-            $('html, body').animate({scrollTop: 0}, 500);
+            $('html, body').animate({ scrollTop: 0 }, 500);
         });
     },
 
@@ -469,23 +477,23 @@ var app = {
             });
             map.behaviors.disable('scrollZoom');
             let tplPlacemark = ymaps.templateLayoutFactory.createClass(
-                    `<div class="placemark">
+                `<div class="placemark">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="43.301" version="1.0" viewBox="0 0 16.087 17.513" clip-rule="evenodd" fill-rule="evenodd" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"><path d="M9.042 17.305c3.433-1.247 6.427-3.424 6.999-6.003.747-3.37-3.224-5.65-6.804-3.586-.965.502-1.437.53-2.387 0-3.58-2.063-7.551.216-6.804 3.586.572 2.579 3.56 4.77 6.999 6.003.797.285 1.257.269 1.997 0z" fill="red"/><path d="M12.056 0c.442 1.83.857 3.78-.768 5.216-1.568 1.385-3.997 1.484-4.64.8-1.353-1.437.09-3.848 1.727-4.064C10.051 1.732 11 .962 12.055 0z" fill="#96bb40"/></svg>
                     </div>`
-                    );
+            );
             let placemark = new ymaps.Placemark(geo, {},
-                    {
-                        iconLayout: tplPlacemark,
-                        iconImageSize: [40, 50],
-                        iconShape: {
-                            type: 'Rectangle',
-                            // Прямоугольник описывается в виде двух точек - верхней левой и нижней правой.
-                            coordinates: [
-                                [-20, -40], [20, 0]
-                            ]
-                        },
-                        cursor: 'default'
-                    });
+                {
+                    iconLayout: tplPlacemark,
+                    iconImageSize: [40, 50],
+                    iconShape: {
+                        type: 'Rectangle',
+                        // Прямоугольник описывается в виде двух точек - верхней левой и нижней правой.
+                        coordinates: [
+                            [-20, -40], [20, 0]
+                        ]
+                    },
+                    cursor: 'default'
+                });
             map.geoObjects.add(placemark);
         }
     },
@@ -500,10 +508,10 @@ var app = {
             if (app.window.outerWidth() >= app.breakpoints[key]) {
                 app.media = app.breakpoints[key];
             }
-//            console.log(app.media);
+            //            console.log(app.media);
         }
         if (app.media != current) {
-            app.document.trigger(app.resizeEventName, {media: app.media});
+            app.document.trigger(app.resizeEventName, { media: app.media });
         }
     },
 

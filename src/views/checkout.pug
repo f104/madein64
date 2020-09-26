@@ -62,7 +62,6 @@ block content
                             | .
 
         form.ms2_form(id="msOrder" method="post").js-toggle-hidden
-            input(type="hidden" name="cdek_city_id")
             .container
 
                 section.checkout__section
@@ -140,8 +139,9 @@ block content
                         .checkout__section__col
                             .input-group._required._loading.js-toggle-hidden__item(data-delivery="1")
                                 label(for="checkout_sdek_city") Город доставки
-                                input.js-cdek-autocomplete(type="text" id="checkout_sdek_city" name="sdek_city" retuired)
+                                input.js-cdek-autocomplete(type="text" id="checkout_sdek_city" name="sdek_city")
                                 span.input-group__msg Начните набирать название города.
+                            input(type="_hidden" name="cdek_city_id")
                             .input-group._checkbox
                                 label.checkbox
                                     input(type="radio" checked name="sdek_tariff_id")
@@ -151,7 +151,7 @@ block content
                                     span.checkbox__text Доставка «до двери»
                             .input-group._required
                                 label(for="checkout_country") Страна
-                                input(type="text" id="checkout_country" name="country" value="Россия" required disabled)
+                                input(type="text" id="checkout_country" name="country" value="Россия" disabled)
                             .input-group
                                 label(for="checkout_region") Область, край, штат
                                 input(type="text" id="checkout_region" name="region" disabled)
