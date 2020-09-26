@@ -1,0 +1,85 @@
+.footer {
+    $root: &;
+    background-color: $color-bg-gray;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    @include media-breakpoint-up(lg) {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    &__inner {
+        @include media-breakpoint-up(md) {
+            @include row(2rem);
+        }
+    }
+    &__nav {
+        @include media-breakpoint-up(md) {
+            @include col(50%, 2rem);
+        }
+        @include media-breakpoint-up(lg) {
+            @include col(66.33%, 2rem);
+        }
+        &__inner {
+            @include media-breakpoint-up(lg) {
+                @include row(2rem);
+            }
+        }
+    }
+    &__info {
+        @include media-breakpoint-up(md) {
+            @include col(50%, 2rem);
+        }
+        @include media-breakpoint-up(lg) {
+            @include col(33.33%, 2rem);
+        }
+    }
+    &__menu {
+        margin-bottom: 2rem;
+        @include media-breakpoint-up(lg) {
+            &:last-child {
+                margin-bottom: 0;
+            }
+            @include col(50%, 2rem);
+        }
+        &__h {
+            color: $color-secondary;
+            font-family: $font-family-alt;
+            font-size: 1.2rem;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        &__list {
+            &__item {
+                margin-bottom: .5rem;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    &__contacts {
+        margin-bottom: 2rem;
+        &__item {
+            padding-left: 1.5em;
+            margin-bottom: .5rem;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            [class^=icon] {
+                position: absolute;
+                left: 0;
+                color: $color-primary;
+                &:before {
+                    margin: 0;
+                }
+            }
+        }
+    }
+    &__docs {
+        font-size: .8rem;
+        margin-bottom: 1rem;
+    }
+    &__credits {
+        font-size: .8rem;
+    }
+}

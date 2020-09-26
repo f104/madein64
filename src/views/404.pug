@@ -1,0 +1,19 @@
+extends _includes/layout
+
+block content
+    
+    +crumbs()(
+        crumbs = {
+            'Главная': '/',
+            'Ошибка 404': '',
+        }
+    )
+    .container.page404
+        .page404__row
+            .page404__col
+                img.page404__img(src="assets/img/logo404.svg" alt="404")
+            .page404__col
+                h1.page404__h Запрашиваемая вами страница не найдена
+                p.page404__text Возможно, она была удалена или перемещена. А возможно, ее никогда и не существовало…
+                a.btn._primary(href="main.html") 
+                    span.btn__inner Начните с начала!

@@ -1,0 +1,45 @@
+.checkbox {
+    $root: &;
+    display: block;
+    &__text {
+        cursor: pointer;
+        padding-left: 1.5rem;
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: .2rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: .2rem;
+            background-color: $color-white;
+            border: 1px solid $color-gray-dark;
+        }
+        &:after {
+            font-family: fontello;
+            font-size: .9rem;
+            content: '\e804';
+            color: $color-primary;
+            position: absolute;
+            left: .2rem;
+            top: .2rem;
+            opacity: 0;
+            @include transition(opacity);
+        }
+        &__inner {
+            color: $color-primary;
+            @include transition(color);
+        }
+        @include hover-desktop {
+            #{$root}__text__inner {
+                color: $color-heading;
+            }
+        }
+    }
+    input {
+        display: none !important;
+        &:checked + #{$root}__text:after {
+            opacity: 1;
+        }
+    }
+}

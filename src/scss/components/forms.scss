@@ -1,0 +1,60 @@
+/*
+form inputs
+*/
+.input-group {
+    $root: &;
+    margin-bottom: 1rem;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    label {
+        display: inline-block;
+        margin-bottom: .5rem;
+    }
+    input, textarea {
+        display: block;
+        border: 1px solid $color-gray-dark;
+        padding: 1rem;
+        width: 100%;
+        @include transition(border-color);
+        &:focus {
+            border-color: $color-base;
+        }
+        &:disabled {
+            background-color: $color-gray;
+            cursor: default;
+        }
+    }
+    textarea {
+        height: 7rem;
+    }
+    &__msg {
+        display: block;
+        font-size: .8rem;
+        margin-top: .5rem;
+        @include transition(color);
+        a {
+            @include link-in-text;
+        }
+    }
+    &._required {
+        label:after {
+            content: '*';
+            color: $color-warning;
+        }
+    }
+    &._error {
+        input, textarea {
+            border-color: $color-danger;
+        }
+        #{$root}__msg {
+            color: $color-danger;
+        }
+    }
+    &._checkbox {
+        margin-bottom: .5;
+        label {
+            margin-right: 2rem;
+        }
+    }
+}

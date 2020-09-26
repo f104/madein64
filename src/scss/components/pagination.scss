@@ -1,0 +1,24 @@
+.pagination {
+    $root: &;
+    display: flex;
+    &__link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3rem;
+        height: 3rem;
+        border: 1px solid $color-primary;
+        margin-right: .5rem;
+        line-height: 1;
+        @include transition(all);
+        &._active {
+            background-color: $color-primary;
+            color: $color-bg;
+            pointer-events: none;
+        }
+        @include hover-desktop {
+            background-color: $color-primary;
+            color: $color-bg;
+        }
+    }
+}

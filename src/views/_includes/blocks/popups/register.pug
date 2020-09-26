@@ -1,0 +1,23 @@
+.popup(id="register")
+    h3.popup__h Регистрация
+    form.login-form
+        .input-group._required
+            label E-mail
+            input(type="email" name="email" required)
+            p.input-group__msg На указанный email придёт письмо со ссылкой для активации.
+        .input-group._required
+            label Пароль
+            input(type="password" name="password" required)
+            p.input-group__msg Вы можете указать свой пароль, или оставить это поле пустым и тогда он будет сгенерирован автоматически.
+        .input-group
+            p.login-form__text Уже зарегистрированы? 
+                a.js-popup(href="#login") Войдите
+            .login-form__btn
+                button.btn._primary(type="submit")
+                    span.btn__inner Зарегистрироваться
+        .input-group
+            p.input-group__msg
+                span.color-warning * 
+                | Обязательные поля. Отправляя информацию, вы соглашаетесь с&nbsp;
+                a(href="#" target="_blank") условиями обработки персональных данных
+                | .

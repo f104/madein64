@@ -1,0 +1,62 @@
+extends _includes/layout
+
+block content
+    
+    +crumbs()(
+        crumbs = {
+                'Главная': '/',
+                'Контакты': ''
+            }
+    )
+    .contacts
+        
+        .container
+        
+            ul.contacts__address
+                li.contacts__address__item
+                    .contacts__address__icon
+                        i.icon-phone
+                    .contacts__address__text
+                        h5.contacts__address__h Телефон:
+                        a.contacts__address__link(href="tel:+78452123456") +7 8452 123-456
+                li.contacts__address__item
+                    .contacts__address__icon
+                        i.icon-location
+                    .contacts__address__text
+                        h5.contacts__address__h Адрес:
+                        | 410012 Россия, Саратов, ул. Краевая, 85
+                li.contacts__address__item
+                    .contacts__address__icon
+                        i.icon-mail
+                    .contacts__address__text
+                        h5.contacts__address__h E-mail:
+                        a.contacts__address__link(href="mailto:info@madein64.ru") info@madein64.ru
+            
+            
+            form.contacts__form(id="feedback")
+                h3.contacts__form__h Напишите нам
+                .contacts__form__row
+                    .contacts__form__col
+                        .input-group._required
+                            label(for="feedback_name") Представьтесь, пожалуйста
+                            input(id="feedback_name" name="name" required)
+                        .input-group._required
+                            label(for="feedback_email") Ваш e-mail
+                            input(type="email" id="feedback_email" name="email" required)
+                        .input-group
+                            label(for="feedback_phone") Телефон
+                            input(id="feedback_phone" placeholder="Не забудьте указать код города" name="phone")
+                    .contacts__form__col
+                        .input-group
+                            label(for="feedback_message") Какая информация вас интересует?
+                            textarea(id="feedback_message" name="message")
+                        .contacts__form__footer
+                            p.contacts__form__help
+                                span.color-warning * 
+                                | Обязательные поля. Отправляя информацию, вы соглашаетесь с&nbsp;
+                                a(href="#" target="_blank") условиями обработки персональных данных
+                                | .
+                            button.contacts__form__btn.btn._primary(type="submit")
+                                span.btn__inner Отправить
+        
+        .contacts__map(id="map" data-geo="51.545848,45.992460")

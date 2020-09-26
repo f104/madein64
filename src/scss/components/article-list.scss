@@ -1,0 +1,27 @@
+/*
+Список статей
+*/
+.article-list {
+    $root: &;
+    &__item {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    @include media-breakpoint-up(md) {
+        &__inner {
+            @include row(3rem);
+            justify-content: center;
+        }
+        &__item {
+            @include col(50%, 3rem);
+            &:last-child {
+                margin-bottom: 3rem;
+            }
+        }
+    }
+    @include media-breakpoint-up(lg) {
+        &__item {
+            @include col(33.33%, 3rem);
+        }
+    }
+}

@@ -1,0 +1,17 @@
+/*
+Бейджи товаров
+*/
+
+.product-badge {
+    $root: &;
+    display: inline-block;
+    font-weight: 400;
+    font-size: .7rem;
+    padding: .4rem;
+    color: $color-white;
+    background-color: $color-base;
+    text-transform: uppercase;
+    &._sale {
+        background-color: $color-red;
+    }
+}

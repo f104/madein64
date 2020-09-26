@@ -1,0 +1,5 @@
+mixin pagination
+    ul.pagination
+        each page in [1, 2, 3]
+            li.pagination__item
+                a.pagination__link(href="#" class = page == 1 ? '_active' : '')= page

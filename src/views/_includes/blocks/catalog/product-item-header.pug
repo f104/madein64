@@ -1,0 +1,8 @@
+mixin product-item-header()
+    .product-item-header
+        a.product-item-header__image(href="product.html")
+            img.lazyload.product-item-header__image__img.cover-img(src=attributes.src alt=attributes.title)
+        .product-item-header__content
+            h5.product-item-header__h
+                a.product-item-header__h__a(href="product.html")= attributes.title
+            p.product-item-header__price= attributes.price

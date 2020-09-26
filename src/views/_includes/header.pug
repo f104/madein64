@@ -1,0 +1,79 @@
+mixin header(options)
+    header.header&attributes(attributes)
+        .header__top
+            .container
+                .header__top__inner
+                    .header__top__m-menu
+                        button.menu-toggle.js-m-menu__toggler
+                            span.menu-toggle__box
+                                span.menu-toggle__inner
+                    ul.header__top__menu
+                        li.header__top__menu__item
+                            a.header__top__menu__link(href="main.html") Главная
+                        li.header__top__menu__item
+                            a.header__top__menu__link(href="catalog.html") Каталог
+                        li.header__top__menu__item
+                            a.header__top__menu__link(href="#") Информация
+                    ul.header__top__menu
+                        li.header__top__menu__item
+                            a.header__top__menu__link.js-popup(href="#login") Вход
+                        li.header__top__menu__item
+                            a.header__top__menu__link.js-popup(href="#register") Регистрация
+                    .header__cart
+                        span.header__cart__toggler.js-header-cart__toggler
+                            i.icon-basket
+                            | Корзина:
+                            strong 2
+                        .header__cart__dropdown.js-header-cart__dropdown
+                            h5.header__cart__dropdown__h Корзина
+                            .header__cart__dropdown__empty.hidden Вы пока ничего не выбрали.
+                            .header__cart__dropdown__full
+                                ul.header__cart__dropdown__products
+                                    +product-item-header(
+                                        title='Шампуры-самокруты МВШ-5'
+                                        price='3500 ₽'
+                                        src='assets/img/products/mvsh5_1_sm.jpg'
+                                    )
+                                    +product-item-header(
+                                        title='Чёрный чеснок креманка (3 головки)'
+                                        price='500 ₽'
+                                        src='assets/img/products/garlic1_1_sm.jpg'
+                                    )
+                                h5.header__cart__dropdown__h Итого: 4000 ₽
+                                a.btn._ondark.header__cart__dropdown__btn(href="checkout.html")
+                                    span.btn__inner Оформить заказ
+                                p Вы сможете изменить заказ на этапе оформления.
+        .header__bottom
+            .container
+                .header__bottom__inner
+                    a.header__logo(href="index.html")
+                        | Волжская пастила
+                        //img.header__logo__img(src="assets/img/logo.svg" alt="madein64.ru")
+                    ul.header__bottom__menu
+                        li.header__bottom__menu__item
+                            a.header__bottom__menu__link(href="vendor.html") Ленивый шашлычник
+                        li.header__bottom__menu__item
+                            a.header__bottom__menu__link(href="vendor.html") Черный чеснок
+                        li.header__bottom__menu__item
+                            a.header__bottom__menu__link(href="vendor.html") Волжская пастила
+        .m-nav.js-m-menu__menu
+            .m-nav__inner
+                ul.m-nav__menu
+                    li.m-nav__menu__item
+                        a.m-nav__menu__link(href="main.html") Главная
+                        ul.m-nav__menu._sub
+                            li.m-nav__menu__item._active
+                                a.m-nav__menu__link(href="vendor.html") Ленивый шашлычник
+                            li.m-nav__menu__item
+                                a.m-nav__menu__link(href="vendor.html") Черный чеснок
+                            li.m-nav__menu__item
+                                a.m-nav__menu__link(href="vendor.html") Волжская пастила
+                    li.m-nav__menu__item
+                        a.m-nav__menu__link(href="catalog.html") Каталог
+                    li.m-nav__menu__item
+                        a.m-nav__menu__link(href="#") Информация
+                ul.m-nav__menu
+                    li.m-nav__menu__item
+                        a.m-nav__menu__link.js-popup(href="#login") Вход
+                    li.m-nav__menu__item
+                        a.m-nav__menu__link.js-popup(href="#register") Регистрация

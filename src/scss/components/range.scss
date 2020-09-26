@@ -1,0 +1,37 @@
+.range {
+    &__inputs {
+        display: none;
+    }
+    &__text {
+        display: block;
+        margin-bottom: 1rem;
+    }
+    .noUi {
+        &-target {
+            background: $color-gray-dark;
+            border-radius: 4px;
+            border-width: 0;
+            box-shadow: none;
+            height: .4rem;
+            margin: .5rem;
+        }
+        &-connect {
+            background: $color-heading;
+        }
+        &-handle {
+            border-width: 0;
+            border-radius: 50%;
+            background: $color-heading;
+            cursor: pointer;
+            box-shadow: none;
+            width: 1rem;
+            height: 1rem;
+            right: -.5rem !important;
+            left: auto;
+            top: -.3rem;
+            &:before, &:after {
+                content: none;
+            }
+        }
+    }
+}

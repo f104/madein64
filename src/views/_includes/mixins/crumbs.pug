@@ -1,0 +1,10 @@
+mixin crumbs()
+    .crumbs
+        .container
+            ul.crumbs__list
+                each link, text in attributes.crumbs
+                    if link
+                        li.crumbs__item
+                            a.crumbs__link(href=link)= text
+                    else
+                        li.crumbs__item._active= text

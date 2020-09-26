@@ -1,0 +1,135 @@
+extends _includes/layout
+include _includes/blocks/catalog/product-filter
+include _includes/mixins/pagination
+
+block title
+    title Каталог товаров :: madein64.ru
+
+block content
+
+    +crumbs()(
+        crumbs = {
+            'Главная': '/',
+            'Каталог': '',
+        }
+    )
+    .container
+        .catalog
+            .catalog__aside
+                +product-filter(
+                    category1='Ленивый шашлычник'
+                    category2='Чёрный чеснок'
+                    category3='Волжская пастила'
+                )
+            .catalog__content
+                .product-list
+                    h1.product-list__h Каталог товаров
+                    .product-list__header
+                        select.js-select
+                            option(value="asc") Сначала дешевые
+                            option(value="desc") Сначала дорогие
+                    .product-list__inner
+                        +product-item(
+                            full=true
+                            title='Шампуры-самокруты МВШ-5'
+                            price='3500 ₽'
+                            desc='Компактный набор из пяти шампуров. Идеален для пикника в небольшой компании.'
+                            src='assets/img/products/mvsh5_1_sm.jpg'
+                            categories=['Шампуры-самокруты', 'Категория']
+                        )
+                        +product-item(
+                            full=true
+                            title='Пастила облепиховая'
+                            price='1500 ₽'
+                            desc='Состав: облепиха, яблоко, мед (100 грамм).'
+                            src='assets/img/products/pastila1_1_sm.jpg'
+                            categories=['Коробка крафт']
+                        )
+                        +product-item(
+                            full=true
+                            title='Шампуры-самокруты МВШ-7'
+                            price='4100 ₽'
+                            price_old='4400 ₽'
+                            desc='Набор из семи шампуров. Сочетает компактные размеры и возможность приготовить большую порцию шашлыка.'
+                            src='assets/img/products/mvsh7_1_sm.jpg'
+                            categories=['Шампуры-самокруты']
+                            badge={'class_name': '_sale', 'title': 'Скидка'}
+                        )
+                        +product-item(
+                            full=true
+                            title='Чёрный чеснок креманка (3 головки)'
+                            price='1500 ₽'
+                            desc='«Подарочная» упаковка. В креманке на подложке уложены 3 головки чёрного чеснока.'
+                            src='assets/img/products/garlic1_1_sm.jpg'
+                            categories=['Креманка']
+                        )
+                        +product-item(
+                            full=true
+                            title='Набор «Макси»'
+                            price='2000 ₽'
+                            desc='Пастила (микс) - 230 грамм, фрукты (микс) - 200 грамм'
+                            src='assets/img/products/pastila2_1_sm.jpg'
+                            categories=['Коробка крафт']
+                        )
+                        +product-item(
+                            full=true
+                            title='Уховарка'
+                            price='3500 ₽'
+                            desc='Уховарка предназначена для удобного приготовления вкусной ухи на природе. Ее необычная форма в виде конуса позволяет быстро нагреть воду за счет широкого дна и узкой горловины с плотно прилегающей крышкой. Такая форма не позволяет ухе быстро остыть, как это происходит в обычной кастрюле, а при переносе уховарки ее содержимое не разольется.'
+                            src='assets/img/products/uhovarka_1_sm.jpg'
+                            categories=['Аксессуары', 'Категория']
+                        )
+                        +product-item(
+                            full=true
+                            title='Чёрный чеснок крафт пакет (1 головка)'
+                            price='500 ₽'
+                            desc='В крафтовом пакете упакована одна головка чёрного чеснока.'
+                            src='assets/img/products/garlic2_1_sm.jpg'
+                            categories=['Крафт-пакет']
+                        )
+                        +product-item(
+                            full=true
+                            title='Фруктовый микс'
+                            price='500 ₽'
+                            desc='Состав: сушёные фрукты и ягоды (50 грамм).'
+                            src='assets/img/products/pastila3_1_sm.jpg'
+                            categories=['Крафт-пакет']
+                        )
+                        +product-item(
+                            full=true
+                            title='Пастила облепиховая'
+                            price='1500 ₽'
+                            desc='Состав: облепиха, яблоко, мед (100 грамм).'
+                            src='assets/img/products/pastila1_1_sm.jpg'
+                            categories=['Коробка крафт']
+                        )
+                        +product-item(
+                            full=true
+                            title='Шампуры-самокруты МВШ-7'
+                            price='4100 ₽'
+                            price_old='4400 ₽'
+                            desc='Набор из семи шампуров. Сочетает компактные размеры и возможность приготовить большую порцию шашлыка.'
+                            src='assets/img/products/mvsh7_1_sm.jpg'
+                            categories=['Шампуры-самокруты']
+                            badge={'class_name': '_sale', 'title': 'Скидка'}
+                        )
+                        +product-item(
+                            full=true
+                            title='Шампуры-самокруты МВШ-5'
+                            price='3500 ₽'
+                            desc='Компактный набор из пяти шампуров. Идеален для пикника в небольшой компании.'
+                            src='assets/img/products/mvsh5_1_sm.jpg'
+                            categories=['Шампуры-самокруты', 'Категория']
+                        )
+                        +product-item(
+                            full=true
+                            title='Шампуры-самокруты МВШ-7'
+                            price='4100 ₽'
+                            price_old='4400 ₽'
+                            desc='Набор из семи шампуров. Сочетает компактные размеры и возможность приготовить большую порцию шашлыка.'
+                            src='assets/img/products/mvsh7_1_sm.jpg'
+                            categories=['Шампуры-самокруты']
+                            badge={'class_name': '_sale', 'title': 'Скидка'}
+                        )
+                    .product-list__footer
+                        +pagination

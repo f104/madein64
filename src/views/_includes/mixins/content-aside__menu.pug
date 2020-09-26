@@ -1,0 +1,9 @@
+mixin content-aside__menu()
+    ul.content-aside__menu
+        li.content-aside__menu__item(class=attributes.active == 'orders' ? '_active' : '')
+            a.content-aside__menu__a(href="orders.html") Список заказов
+        li.content-aside__menu__item(class=attributes.active == 'profile' ? '_active' : '')
+            a.content-aside__menu__a(href="profile.html") Профиль
+        li.content-aside__menu__item._logout
+            a.content-aside__menu__a(href="index.html") Выход 
+                i.icon-logout

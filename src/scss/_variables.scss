@@ -1,0 +1,54 @@
+/* Main Colors */
+$color-base: #8c8b8b;
+$color-primary: #86ae34;
+$color-primary-dark: #679509;
+$color-primary-light: #c7ed79;
+$color-secondary: #505050;
+$color-white: #fff;
+$color-red: #ed2835;
+$color-gray: #f1f1f1;
+$color-gray-dark: #ddd;
+$color-bg-gray: #f1f1f1;
+$color-bg-gray-light: #f3f3f3;
+$color-heading: $color-secondary;
+$color-warning: #f0ad4e;
+$color-danger: $color-red;
+
+$color-bg: $color-white;
+$color-text: $color-base;
+$color-link: inherit;
+$color-link-hover: $color-primary;
+
+$link-opacity: .8;
+
+$header-top-height-sm: 3rem;
+$header-top-height: 2.5rem;
+
+/* Fonts */
+$font-family: "PT Sans", sans-serif;
+$font-family-alt: Pacifico, handwriting;
+$font-size: 1rem;
+$font-weight: normal;
+$letter-spacing: normal;
+$line-height: normal;
+
+/* Screen sizes */
+$grid-breakpoints: (
+xs: 0,
+sm: 320px,
+md: 768px,
+lg: 1280px
+);
+
+$container-max-widths: (
+xs: 100%,
+sm: 100%,
+md: 100%,
+lg: 1220px
+);
+$container-paddings: (
+xs: 1rem,
+sm: 1rem,
+md: 3rem,
+lg: 0
+);

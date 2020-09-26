@@ -1,0 +1,51 @@
+extends _includes/layout-aside
+
+block aside-crumbs
+    +crumbs()(
+        crumbs = {
+                'Главная': '/',
+                'Профиль': ''
+            }
+    )
+
+block aside-menu
+    +content-aside__menu()(
+        active='profile'
+    )
+
+block aside-content
+    h1.content-aside__h Профиль
+                            
+    form(id="prodile_form")
+
+        .input-group._required
+            label(for="checkout_email") Email
+            input(type="email" id="prodile_form_email" placeholder="Ваш адрес электронной почты" value="user@host.com" name="email" required)
+        .input-group._required
+            label(for="prodile_form_fullname") Полное имя
+            input(type="text" id="prodile_form_fullname" name="fullname" value="Константин Константинович Константинопольский" required)
+            p.input-group__msg Новый email нужно будет подтвердить.
+        .input-group
+            label(for="prodile_form_phone") Телефон
+            input(type="text" id="prodile_form_phone" name="phone")
+        .input-group
+            label(for="prodile_form_pass1") Пароль
+            input(type="password" id="prodile_form_pass1" name="pass1")
+            p.input-group__msg Вы можете указать новый пароль.
+        .input-group
+            label(for="prodile_form_pass2") Пароль
+            input(type="password" id="prodile_form_pass2" name="pass2" value="qwerty")
+            p.input-group__msg Нужно повторить новый пароль еще раз, чтобы исключить опечатку.
+        .input-group._checkbox
+            label.checkbox
+                input(type="checkbox" checked name="accept_mail")
+                span.checkbox__text Я согласен получать информационную рассылку
+        .input-group
+            p.input-group__msg 
+                span.color-warning * 
+                | Обязательные поля. Отправляя информацию, вы соглашаетесь с&nbsp;
+                a(href="#" target="_blank") условиями обработки персональных данных
+                | .
+        .input-group
+            button.btn._primary(type="submit")
+                span.bnt__inner Сохранить

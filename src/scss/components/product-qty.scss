@@ -1,0 +1,49 @@
+/*
+Кол-во товаров
+*/
+.product-qty {
+    background-color: $color-bg-gray-light;
+    display: inline-flex;
+    font-weight: normal;
+    color: $color-text;
+    &__btn {
+        width: 2.5rem;
+        cursor: pointer;
+        &:before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: fontello;
+            @include transition(opacity);
+        }
+        &._plus:before {
+            content: '\e805';
+        }
+        &._minus:before {
+            content: '\e806';
+        }
+        @include hover-desktop {
+            opacity: .8;
+        }
+    }
+    &__input {
+        width: 3rem;
+        text-align: center;
+        font-size: 1.2rem;
+        padding: .67rem 0;
+        -moz-appearance:textfield;
+        &::-webkit-inner-spin-button, 
+        &::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        }
+        @include media-breakpoint-up(md) {
+        padding: .8rem 0;
+            
+        }
+        &:focus {
+            box-shadow: inset 0 0 0 1px $color-gray-dark;
+        }
+    }
+}

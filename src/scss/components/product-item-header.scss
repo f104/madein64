@@ -1,0 +1,35 @@
+/*
+Элемент списка товаров
+*/
+.product-item-header {
+    $root: &;
+    display: flex;
+    margin-bottom: 1rem;
+    &__image {
+        display: block;
+        /*border-radius: 5px;*/
+        border: 1px solid $color-gray;
+        overflow: hidden;
+        width: 50px;
+        height: 50px;
+            flex-shrink: 0;
+            margin-right: 1rem;
+        @include hover-desktop {
+            opacity: $link-opacity;
+        }
+        @include transition(opacity);
+        &__img {
+            width: 100%;
+        }
+    }
+    &__h {
+        color: $color-white;
+        margin-top: -.2rem;
+        display: block;
+    }
+    &__price {
+        color: $color-primary;
+        font-size: 1.2rem;
+        font-weight: 900;
+    }
+}

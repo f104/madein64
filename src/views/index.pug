@@ -1,0 +1,37 @@
+extends _includes/layout
+include _includes/blocks/index/vendor-intro
+
+block content
+
+    +crumbs()(
+        crumbs = {
+                'Список страниц': ''
+            }
+    )
+    
+    .container.rte
+        p Сделано под три ширины: 320+ px (телефон), 768+ px (планшет), 1280+ px (десктоп).
+        p Для возврата на этот экран, кликайте по логотипу в шапке.
+        ul
+            li
+                a(href="main.html") Главная
+            li
+                a(href="vendor.html") Производитель
+            li
+                a(href="catalog.html") Каталог
+            li
+                a(href="product.html") Товар
+            li
+                a(href="checkout.html") Оформление заказа
+            li
+                a(href="article.html") Статья
+            li
+                a(href="contacts.html") Контакты
+            li
+                a.js-popup(href="#login") Вход
+                |  / 
+                a.js-popup(href="#register") Регистрация
+            li
+                a(href="profile.html") Профиль
+            li
+                a(href="404.html") 404

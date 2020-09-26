@@ -1,0 +1,62 @@
+extends _includes/layout
+include _includes/blocks/catalog/product-filter
+
+block title
+    title Каталог товаров :: Волжская пастила :: madein64.ru
+
+block content
+    
+    +crumbs()(
+        crumbs = {
+            'Главная': '/',
+            'Волжская пастила': '/vendor.html',
+            'Каталог': '',
+        }
+    )
+    .container
+        .catalog
+            .catalog__aside
+                +product-filter(
+                    category1='Коробка крафт'
+                    category2='Крафт-пакет'
+                )
+            .catalog__content
+                .product-list
+                    h1.product-list__h Волжская пастила
+                    .product-list__header
+                        select.js-select
+                            option Сначала дешевые
+                            option Сначала дорогие
+                    .product-list__inner
+                        +product-item(
+                            full=true
+                            title='Пастила облепиховая'
+                            price='1500 ₽'
+                            desc='Состав: облепиха, яблоко, мед (100 грамм).'
+                            src='assets/img/products/pastila1_1_sm.jpg'
+                            categories=['Коробка крафт']
+                        )
+                        +product-item(
+                            full=true
+                            title='Набор «Макси»'
+                            price='2000 ₽'
+                            desc='Пастила (микс) - 230 грамм, фрукты (микс) - 200 грамм'
+                            src='assets/img/products/pastila2_1_sm.jpg'
+                            categories=['Коробка крафт']
+                        )
+                        +product-item(
+                            full=true
+                            title='Фруктовый микс'
+                            price='500 ₽'
+                            desc='Состав: сушёные фрукты и ягоды (50 грамм).'
+                            src='assets/img/products/pastila3_1_sm.jpg'
+                            categories=['Крафт-пакет']
+                        )
+                        +product-item(
+                            full=true
+                            title='Пастила облепиховая'
+                            price='1500 ₽'
+                            desc='Состав: облепиха, яблоко, мед (100 грамм).'
+                            src='assets/img/products/pastila1_1_sm.jpg'
+                            categories=['Коробка крафт']
+                        )

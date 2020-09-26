@@ -1,0 +1,112 @@
+/*
+product page
+*/
+.product {
+    $root: &;
+    margin-bottom: 5rem;
+    @include media-breakpoint-up(lg) {
+        @include row(4rem);
+        flex-direction: row-reverse;
+        &__info, &__slider {
+            @include col(50%, 4rem);
+        }
+    }
+    &__info {
+        margin-bottom: 3rem;
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 0;
+        }
+    }
+    &__badges {
+        position: absolute;
+        top: .8rem;
+        right: .8rem;
+        @include media-breakpoint-up(lg) {
+            right: 2.8rem;
+        }
+    }
+    &__category {
+        font-size: .8rem;
+        margin-bottom: .3rem;
+        color: $color-primary;
+        &__item {
+            display: inline-block;
+            &:after {
+                content: ', ';
+            }
+            &:last-child {
+                &:after {
+                    content: none;
+                }
+            }
+        }
+        &__a {
+            @include hover-desktop {
+                color: $color-heading;
+            }
+        }
+    }
+    &__h {
+        color: $color-heading;
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+    }
+    &__price {
+        color: $color-primary;
+        font-size: 2rem;
+        font-weight: 900;
+        margin-bottom: 1rem;
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 3rem;
+        }
+        &__old {
+            display: inline-block;
+            margin-right: 1ex;
+            color: $color-base;
+            font-size: 1rem;
+        }
+    }
+    &__desc {
+        line-height: 1.5;
+        color: $color-heading;
+        margin-bottom: 3rem;
+    }
+    &__form {
+        display: flex;
+        margin-bottom: 3rem;
+        .product-qty {
+            margin-right: 1rem;
+        }
+    }
+    &__data {
+        margin-bottom: 1rem;
+        td {
+            padding: .5rem;
+            vertical-align: top;
+            border-bottom: 1px solid $color-gray;
+            &:first-child {
+                padding-left: 0;
+                color: $color-heading;
+            }
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+        tr {
+            &:last-child {
+                td {
+                    border-bottom-width: 0;
+                }
+            }
+        }
+    }
+    &__muted {
+        font-size: .8rem;
+        margin-bottom: .5rem;
+    }
+    .share {
+        justify-content: center;
+    }
+}

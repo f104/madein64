@@ -1,0 +1,7 @@
+mixin share()
+    ul.share
+        each item in ['facebook', 'twitter', 'vkontakte', 'odnoklassniki']
+            li.share__item
+                a.btn._round.js-share(href="#" class='_' + item)
+                    span.btn__inner
+                        i(class='icon-' + item)

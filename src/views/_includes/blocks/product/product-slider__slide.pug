@@ -1,0 +1,15 @@
+mixin product-slider__slide()
+    if attributes.href
+        .slider__slide
+            picture.slider__picture
+                source(type="image/webp" data-srcset=attributes.src + '.webp')
+                source(type="image/jpeg" data-srcset=attributes.src + '.jpg')
+                img.lazyload(data-src=attributes.src + '.jpg')
+            button.slider__slide__zoom.js-popup(href=attributes.href + '.jpg' data-fancybox="gallery")
+                i.icon-zoom-in
+    else
+        .slider__slide
+            picture.slider__picture
+                source(type="image/webp" data-srcset=attributes.src + '.webp')
+                source(type="image/jpeg" data-srcset=attributes.src + '.jpg')
+                img.lazyload(data-src=attributes.src + '.jpg')

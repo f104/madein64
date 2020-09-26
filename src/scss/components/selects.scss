@@ -1,0 +1,28 @@
+@import "node_modules/choices.js/src/styles/choices.scss";
+
+.choices {
+    font-size: .8rem;
+    min-width: 200px;
+    &__inner {
+        background-color: $color-white;
+        border-radius: 0;
+        font-size: inherit;
+    }
+    &[data-type*="select-one"] {
+        &:after {
+            border-color: $color-base transparent transparent transparent;
+        }
+        &.is-open:after {
+            border-color: transparent transparent $color-base transparent;
+        }
+    }
+    &__list {
+        &--dropdown {
+            border-radius: 0;
+            .choices__item {
+                padding: 10px;
+                font-size: inherit;
+            }
+        }
+    }
+}

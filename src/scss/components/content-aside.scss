@@ -1,0 +1,83 @@
+/*
+меню слева, контент справа
+*/
+
+.content-aside {
+    $root: &;
+    @include media-breakpoint-up(lg) {
+        display: flex;
+    }
+    &__aside {
+        @include media-breakpoint-up(lg) {
+            width: 15%;
+            margin-right: 3rem;
+            border-right: 1px solid $color-gray;
+            flex: 0 0 15%;
+        }
+    }
+    &__content{
+        @include media-breakpoint-up(lg) {
+            flex: 1;
+        }
+    }
+    
+    &__h {
+        font-family: $font-family-alt;
+        color: $color-heading;
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        @include media-breakpoint-up(lg) {
+            display: none;
+        }
+    }
+    
+    &__menu {
+        display: none;
+        @include media-breakpoint-up(lg) {
+            display: block;
+        }
+        &__item {
+            display: block;
+            font-family: $font-family-alt;
+            color: $color-heading;
+            font-size: 1.2rem;
+            padding: .5rem 0;
+            &:first-child {
+                padding-top: 0;
+            }
+            /*background-color: $color-bg-gray-light;*/
+            /*margin-bottom: .5rem;*/
+            /*border-bottom: 2px solid $color-gray;*/
+            &._active {
+                /*background-color: $color-primary;*/
+                color: $color-primary;
+                pointer-events: none;
+                &:before {
+                    content: '•';
+                    position: absolute;
+                    left: -.7em;
+                    top: .4rem;
+                }
+                &:after {
+                    content: '';
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    border-radius: .2rem;
+                    border-color: transparent $color-gray $color-gray transparent;
+                    border-style: solid; 
+                    background-color: $color-bg;
+                    border-width: 1px;
+                    position: absolute;
+                    right: -.75rem;
+                    top: 50%;
+                    transform: translateY(-50%) rotate(-45deg);
+                }
+            }
+            &._logout {
+                [class^="icon"] {
+                    /*color: $color-text;*/
+                }
+            }
+        }
+    }
+}

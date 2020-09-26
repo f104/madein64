@@ -1,0 +1,43 @@
+block variables
+doctype html
+html(lang=__.lang, class="no-js")
+    head
+        include head
+    body.body
+        include mixins/svgsprite
+        include mixins/crumbs
+        include header
+        include blocks/catalog/product-item-header
+        include blocks/catalog/product-item
+        include blocks/articles/article-item
+        include footer
+        
+        +header
+        .content
+            block content
+        +footer
+        
+        .hidden
+            include blocks/popups/login
+            include blocks/popups/register
+        
+        span.back-top.js-back-top
+            button.btn._primary._round(title="наверх")
+                span.btn__inner 
+                    i.icon-up-big
+        .content-overlay.js-m-menu__overlay
+
+        
+        script(src="//ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js")
+        script.
+            WebFont.load({
+                google: { "families": [
+                        "PT+Sans:400,400i,700:cyrillic",
+                        "Pacifico:400:cyrillic"
+                    ]},
+                active: function() {
+                    sessionStorage.fonts = true;
+                }
+            });
+        link(rel='stylesheet', href='assets/css/main.css?v=' + PACKAGE.version)
+        include scripts

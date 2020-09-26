@@ -1,0 +1,44 @@
+/*
+Элемент списка статей
+*/
+.article-item {
+    $root: &;
+    &__image {
+        display: block;
+        border: 1px solid $color-gray;
+        overflow: hidden;
+        width: 260px;
+        height: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: .7rem;
+        @include hover-desktop {
+            #{$root}__image__img {
+                opacity: $link-opacity;
+            }
+        }
+        @include media-breakpoint-up(lg) {
+            width: 100%;
+            height: 250px;
+        }
+        &__img {
+            @include transition(opacity);
+            width: 100%;
+        }
+    }
+    &__h {
+        color: $color-heading;
+        font-size: 1.5rem;
+        line-height: 1.2;
+        font-weight: 700;
+        margin-bottom: .5rem;
+    }
+    &__desc {
+        line-height: 1.4;
+    }
+    &__read {
+        color: $color-heading;
+        font-style: italic;
+        white-space: nowrap;
+    }
+}

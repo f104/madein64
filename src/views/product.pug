@@ -1,0 +1,132 @@
+extends _includes/layout
+include _includes/blocks/product/product-slider__slide
+include _includes/mixins/share
+include _includes/mixins/product-qty
+
+block content
+    
+    +crumbs()(
+        crumbs = {
+                'Главная': '/',
+                'Каталог': '/catalog.html',
+                'МВШ-7': '',
+            }
+    )
+    .container
+        .product
+            
+            .product__info 
+                ul.product__category
+                    li.product__category__item
+                        a.product__category__a(href="#") Шампуры-самокруты
+                h1.product__h Шампуры-самокруты МВШ-7
+                p.product__price
+                    del.product__price__old 4100 ₽
+                    | 4400 ₽
+                p.product__desc Набор из семи шампуров. Сочетает компактные размеры и возможность приготовить большую порцию шашлыка.
+                form.product__form
+                    +product-qty
+                    button.btn._primary 
+                        span.btn__inner В корзину
+                table.product__data
+                    tbody
+                        tr
+                            td Вес
+                            td 2 кг
+                        tr
+                            td Материал
+                            td нержавеющая сталь
+                        tr
+                            td Гарантия
+                            td 1 год
+                        tr
+                            td Размер
+                            td в тубусе — 65×10 см, в сборе — 49×41 см
+                p.product__muted.
+                    Мотор, входящий в&nbsp;комплектацию, может отличатся от&nbsp;представленного на&nbsp;сайте. 
+                    Одной батарейки (1,5V, тип&nbsp;D) хватает на&nbsp;5-6 часов работы (в&nbsp;комплект не&nbsp;входит, т.к.&nbsp;запрещена к&nbsp;почтовой пересылке).
+                p.product__muted.
+                    Внешний вид изделия, может отличаться от&nbsp;иллюстраций, представленных на&nbsp;сайте.
+            
+            .product__slider
+                .slider._product.js-product-slider
+                    +product-slider__slide(
+                        src='assets/img/products/mvsh7_1_768'
+                        href='assets/img/products/mvsh7_1'
+                    )
+                    +product-slider__slide(
+                        src='assets/img/products/mvsh7_2_768'
+                        href='assets/img/products/mvsh7_2'
+                    )
+                    +product-slider__slide(
+                        src='assets/img/products/mvsh7_1_768'
+                        href='assets/img/products/mvsh7_1'
+                    )
+                    +product-slider__slide(
+                        src='assets/img/products/mvsh7_2_768'
+                        href='assets/img/products/mvsh7_2'
+                    )
+                    +product-slider__slide(
+                        src='assets/img/products/mvsh7_1_768'
+                        href='assets/img/products/mvsh7_1'
+                    )
+                    +product-slider__slide(
+                        src='assets/img/products/mvsh7_2_768'
+                        href='assets/img/products/mvsh7_2'
+                    )
+                .slider._product._nav.js-product-slider-nav
+                    +product-slider__slide(
+                        src='assets/img/products/mvsh7_1_sm'
+                    )
+                    +product-slider__slide(
+                        src='assets/img/products/mvsh7_2_sm'
+                    )
+                    +product-slider__slide(
+                        src='assets/img/products/mvsh7_1_sm'
+                    )
+                    +product-slider__slide(
+                        src='assets/img/products/mvsh7_2_sm'
+                    )
+                    +product-slider__slide(
+                        src='assets/img/products/mvsh7_1_sm'
+                    )
+                    +product-slider__slide(
+                        src='assets/img/products/mvsh7_2_sm'
+                    )
+                .product__badges
+                    span.product-badge._sale Скидка
+                +share
+                    
+        .product-list._grid
+            .product-list__h Рекомендуем
+            .product-list__inner
+                +product-item(
+                    title='Шампуры-самокруты МВШ-5'
+                    price='3500 ₽'
+                    desc='Компактный набор из пяти шампуров. Идеален для пикника в небольшой компании.'
+                    src='assets/img/products/mvsh5_1_sm.jpg'
+                    categories=['Шампуры-самокруты', 'Категория']
+                )
+                +product-item(
+                    title='Пастила облепиховая'
+                    price='1500 ₽'
+                    desc='Состав: облепиха, яблоко, мед (100 грамм).'
+                    src='assets/img/products/pastila1_1_sm.jpg'
+                    categories=['Коробка крафт']
+                )
+                +product-item(
+                    title='Шампуры-самокруты МВШ-7'
+                    price='4100 ₽'
+                    price_old='4400 ₽'
+                    desc='Набор из семи шампуров. Сочетает компактные размеры и возможность приготовить большую порцию шашлыка.'
+                    src='assets/img/products/mvsh7_1_sm.jpg'
+                    categories=['Шампуры-самокруты']
+                    badge={'class_name': '_sale', 'title': 'Скидка'}
+                )
+                +product-item(
+                    title='Чёрный чеснок креманка (3 головки)'
+                    price='1500 ₽'
+                    desc='«Подарочная» упаковка. В креманке на подложке уложены 3 головки чёрного чеснока.'
+                    src='assets/img/products/garlic1_1_sm.jpg'
+                    categories=['Креманка']
+                )

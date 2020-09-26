@@ -1,0 +1,21 @@
+.popup {
+    box-shadow: 0 0 .5rem rgba($color-heading, .3);
+    border-radius: .2rem;
+    &__h {
+        font-family: $font-family-alt;
+        font-size: 2rem;
+        line-height: 1;
+        text-align: center;
+        color: $color-heading;
+        margin-bottom: 3rem;
+    }
+}
+body.fancybox-active {
+    overflow: hidden;
+    > :not(.fancybox-container) {
+        filter: blur(.4rem);
+    }
+}
+.fancybox-bg {
+    background-color: rgba($color-text, .3);
+}

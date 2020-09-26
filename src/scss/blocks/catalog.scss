@@ -1,0 +1,22 @@
+/*
+Каталог товаров
+*/
+
+.catalog {
+    $root: &;
+    display: flex;
+    &__aside {
+        display: none;
+        @include media-breakpoint-up(lg) {
+            display: block;
+            width: 20%;
+            flex-shrink: 0;
+            padding-right: 2rem;
+            margin-right: 2rem;
+            border-right: 1px solid $color-gray;
+        }
+    }
+    &__content {
+        flex-grow: 1;
+    }
+}

@@ -1,0 +1,56 @@
+// Commons
+@import "variables";
+@import "custom-reset";
+
+// External
+@import "vendor/jquery.fancybox.css";
+@import "vendor/nouislider.min.css";
+@import "node_modules/slick-carousel/slick/slick.scss";
+
+// Base
+@import "mixins";
+@import "base";
+/*@import "generated/sprites";*/
+/*@import "generated/svgsprites";*/
+@import "fonts";
+
+// Components
+@import "components/article-item";
+@import "components/article-list";
+@import "components/autocomplete";
+@import "components/back-top";
+@import "components/buttons";
+@import "components/d-table";
+@import "components/checkbox";
+@import "components/content-aside";
+@import "components/content-overlay";
+@import "components/crumbs";
+@import "components/footer";
+@import "components/forms";
+@import "components/header";
+@import "components/login-form";
+@import "components/menu-toggler";
+@import "components/m-nav";
+@import "components/pagination";
+@import "components/popup";
+@import "components/product-badge";
+@import "components/product-filter";
+@import "components/product-item";
+@import "components/product-item-header";
+@import "components/product-list";
+@import "components/product-qty";
+@import "components/range";
+@import "components/rte";
+@import "components/selects";
+@import "components/share";
+@import "components/slider";
+@import "components/vendor-intro";
+@import "components/404";
+
+// blocks
+@import "blocks/article";
+@import "blocks/catalog";
+@import "blocks/checkout";
+@import "blocks/contacts";
+@import "blocks/index";
+@import "blocks/product";

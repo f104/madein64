@@ -1,0 +1,26 @@
+.product-filter {
+    $root: &;
+    position: sticky;
+    top: 60px;
+    &__h {
+        font-family: $font-family-alt;
+        color: $color-heading;
+    }
+    &__fieldset {
+        display: block;
+        padding: 3rem 0;
+        border-bottom: 1px solid $color-gray-dark;
+        &:first-of-type {
+            padding-top: 2rem;
+        }
+        &:last-of-type {
+            border-bottom-width: 0;
+        }
+    }
+    .checkbox {
+        margin-bottom: .5rem;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}

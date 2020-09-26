@@ -1,0 +1,16 @@
+mixin article-item()
+    .article-item.article-list__item
+        .article-item__inner
+            a.article-item__image(href="article.html")
+                if (attributes.srcWebp)
+                    picture.article-item__image__img.cover-pic
+                        source(type="image/webp" data-srcset=attributes.srcWebp)
+                        source(type="image/jpg" data-srcset=attributes.src)
+                        img.lazyload(data-src=attributes.src alt=attributes.title)
+                else
+                    img.lazyload.article-item__image__img.cover-pic(data-src=attributes.src alt=attributes.title)
+            h4.article-item__h
+                a(href="article.html")= attributes.title
+            p.article-item__desc= attributes.desc
+                | 
+                a.article-item__read(href="article.html") Читать →

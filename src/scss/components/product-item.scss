@@ -1,0 +1,110 @@
+/*
+Элемент списка товаров
+*/
+.product-item {
+    $root: &;
+    text-align: center;
+    &__image {
+        display: block;
+        border: 1px solid $color-gray;
+        overflow: hidden;
+        height: 260px;
+        width: 260px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: .7rem;
+        @include hover-desktop {
+            #{$root}__image__img {
+                opacity: $link-opacity;
+            }
+        }
+        @include media-breakpoint-up(md) {
+
+        }
+        &__img {
+            @include transition(opacity);
+            width: 100%;
+        }
+    }
+    &__content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        &__header {
+            flex-grow: 1;
+        }
+    }
+    &__category {
+        font-size: .8rem;
+        margin-bottom: .3rem;
+        color: $color-primary;
+        &__item {
+            display: inline-block;
+            &:after {
+                content: ', ';
+            }
+            &:last-child {
+                &:after {
+                    content: none;
+                }
+            }
+        }
+        &__a {
+            @include hover-desktop {
+                color: $color-heading;
+            }
+        }
+    }
+    &__h {
+        color: $color-heading;
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: .5rem;
+    }
+    &__price {
+        color: $color-primary;
+        font-size: 1.5rem;
+        font-weight: 900;
+        margin-bottom: .5rem;
+        &__old {
+            display: inline-block;
+            margin-right: 1ex;
+            color: $color-base;
+            font-size: 1rem;
+        }
+    }
+    &__desc {
+        display: none;
+        margin-bottom: .5rem;
+    }
+    &__badges {
+        position: absolute;
+        top: .8rem;
+        right: .8rem;
+    }
+    &._full {
+        #{$root} {
+            &__desc {
+                display: block;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            text-align: left;
+            display: flex;
+            #{$root} {
+                &__image {
+                    margin-bottom: 0;
+                    margin-left: 0;
+                    margin-right: 2rem;
+                    flex-shrink: 0;
+                }
+                &__content {
+                    &__header {
+                        flex-grow: 0;
+                    }
+                }
+            }
+        }
+    }
+}

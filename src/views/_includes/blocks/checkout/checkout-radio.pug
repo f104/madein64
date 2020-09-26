@@ -1,0 +1,15 @@
+mixin checkout-radio()
+    label.checkout-radio
+        input(type="radio" checked=attributes.checked name=attributes.name data-toggle="[data-delivery='"+attributes.id+"']").js-toggle-hidden__toggler
+        span.checkout-radio__inner
+            span.checkout-radio__h= attributes.title
+            span.checkout-radio__text!= attributes.text
+            if attributes.img
+                if attributes.imgWebp
+                    picture.checkout-radio__img
+                        source(type="image/webp" data-source=attributes.imgWebp)
+                        source(type="image/png" data-source=attributes.img)
+                        img.lazyload(data-src=attributes.img alt=attributes.title)
+                else
+                    img.lazyload.checkout-radio__img(data-src=attributes.img alt=attributes.title)
+

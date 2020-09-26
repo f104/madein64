@@ -1,0 +1,24 @@
+mixin product-item()
+    .product-list__item.product-item(class=attributes.full ? '_full' : '')
+        a.product-item__image(href="product.html")
+            img.lazyload.product-item__image__img.cover-pic(src=attributes.src alt=attributes.title)
+            if attributes.badge
+                .product-item__badges
+                    span.product-badge(class=attributes.badge.class_name)= attributes.badge.title
+        .product-item__content
+            .product-item__content__header
+                if attributes.categories
+                    ul.product-item__category
+                        each category in attributes.categories
+                            li.product-item__category__item
+                                a.product-item__category__a(href="#")= category
+                h5.product-item__h
+                    a.product-item__h__a(href="product.html")= attributes.title
+                p.product-item__desc= attributes.desc
+            p.product-item__price
+                if attributes.price_old
+                    del.product-item__price__old=attributes.price_old
+                = attributes.price
+            form
+                button.btn._primary 
+                    span.btn__inner В корзину

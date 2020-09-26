@@ -1,0 +1,14 @@
+mixin vendor-intro()
+    .vendor-intro(class=attributes.className)
+        .container
+            h3.vendor-intro__h= attributes.title
+            p.vendor-intro__desc= attributes.desc
+            if (attributes.btnText)
+                .vendor-intro__btn
+                    a.btn._primary(href=attributes.url)
+                        span.btn__inner= attributes.btnText
+        .vendor-intro__bg
+            picture.vendor-intro__bg__pictire
+                source(type="image/webp" srcset=attributes.bg + '.webp')
+                source(type="image/jpeg" srcset=attributes.bg + '.jpg')
+                img(src=attributes.bg + ".jpg" alt=attributes.title)

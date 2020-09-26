@@ -1,0 +1,213 @@
+extends _includes/layout
+include _includes/mixins/product-qty
+include _includes/blocks/checkout/checkout-radio
+
+block content
+
+    +crumbs()(
+        crumbs = {
+                'Главная': '/',
+                'Оформление заказа': ''
+            }
+    )
+    .checkout
+        .container
+
+            section.checkout__section(id="msCart")
+                h3.checkout__h Ваши покупки
+                .checkout__section__row
+                    .checkout__section__col
+                        .d-table
+                            .d-table__header
+                                .d-table__td._photo
+                                .d-table__td Наименование
+                                .d-table__td Цена
+                                .d-table__td Количество
+                                .d-table__td._remove
+                            .d-table__tr
+                                .d-table__td._image
+                                    a.d-table__image(href="product.html")
+                                        img(src='assets/img/products/mvsh5_1_sm.jpg' alt='Шампуры-самокруты МВШ-5')
+                                .d-table__td._name
+                                    a(href="product.html") Шампуры-самокруты МВШ-5
+                                .d-table__td._price.clearfix 3500 ₽
+                                .d-table__td._count
+                                    form(method="post" class="ms2_form")
+                                        +product-qty
+                                        button(type="submit" name="ms2_action" value="cart/change" hidden) OK
+                                .d-table__td._remove
+                                    form(method="post" class="ms2_form")
+                                        button.btn._danger(type="submit" name="ms2_action" value="cart/remove" title="Удалить")
+                                            span.btn__inner
+                                                i.icon-cancel
+                            .d-table__tr
+                                .d-table__td._image
+                                    a.d-table__image(href="product.html")
+                                        img(src='assets/img/products/garlic1_1_sm.jpg' alt='Чёрный чеснок креманка (3 головки)')
+                                .d-table__td._name
+                                    a(href="product.html") Чёрный чеснок креманка (3 головки)
+                                .d-table__td._price.clearfix 500 ₽
+                                .d-table__td._count
+                                    form(method="post" class="ms2_form")
+                                        +product-qty
+                                        button(type="submit" name="ms2_action" value="cart/change" hidden) OK
+                                .d-table__td._remove
+                                    form(method="post" class="ms2_form")
+                                        button.btn._danger(type="submit" name="ms2_action" value="cart/remove" title="Удалить")
+                                            span.btn__inner
+                                                i.icon-cancel
+                    .checkout__section__col
+                        p.checkout__help Проверьте список покупок, если вдруг что‑то забыли, можно
+                            a(href="catalog.html") продолжить покупки
+                            | .
+
+        form.ms2_form(id="msOrder" method="post").js-toggle-hidden
+            input(type="_hidden" name="cdek_city_id")
+            .container
+
+                section.checkout__section
+                    h3.checkout__h Данные получателя
+                    .checkout__section__row
+                        .checkout__section__col
+                            .input-group._required
+                                label(for="checkout_email") Email
+                                input(type="email" id="checkout_email" placeholder="Ваш адрес электронной почты" value="user@host.com" name="email" required)
+                            .input-group._required._error
+                                label(for="checkout_receiver") Получатель
+                                input(type="text" id="checkout_receiver" placeholder="ФИО получателя товара" name="receiver" required)
+                                span.input-group__msg Пожалуйста, заполните это поле.
+                            .input-group._required
+                                label(for="checkout_phone") Телефон
+                                input(type="text" id="checkout_phone" placeholder="Может потребоваться для уточнения параметров заказа" name="phone" required)
+                            .input-group
+                                label(for="checkout_comment") Комментарий
+                                textarea(name="comment" id="checkout_comment" placeholder="Любая дополнительная информация, которую вы посчитаете нужным сообщить")
+                        .checkout__section__col
+                            p.checkout__help
+                                span.color-warning *
+                                | Обязательные поля. Отправляя информацию, вы соглашаетесь с&nbsp;
+                                a(href="#" target="_blank") условиями обработки персональных данных
+                                | .
+                            p.checkout__help.
+                                Эти данные могут нам понадобиться для уточнения информации о заказе.
+                                Мы никогда не передаем личные данные третьим лицам.
+
+                section.checkout__section
+                    h3.checkout__h Вариант доставки
+                    .checkout__section__row
+                        .checkout__section__col
+                            +checkout-radio(
+                                id=1
+                                name = 'delivery'
+                                checked = true
+                                title = 'СДЭК'
+                                text = 'Доставка транспортной компанией по России. Возможна доставка непосредственно «до двери». Стоимость рассчитывается автоматически во время оформления заказа. Отгрузка товара осуществляется в течение пяти рабочих дней.'
+                                img = 'assets/img/checkout/sdek.png'
+                                imgWebp = 'assets/img/checkout/sdek.webp'
+                            )
+                            +checkout-radio(
+                                id=2
+                                name = 'delivery'
+                                title = 'Почтовая доставка'
+                                text != 'Доставка в любой регион мира до почтового отделения. Стоимость рассчитывается <a href="https://www.pochta.ru/support/post-rules/tariffs" target="_blank">по&nbsp;тарифам Почты России</a> автоматически во время оформления заказа. Отгрузка товара осуществляется в&nbsp;течение пяти рабочих дней.'
+                                img = 'assets/img/checkout/rp.png'
+                                imgWebp = 'assets/img/checkout/rp.webp'
+                            )
+                            +checkout-radio(
+                                id=3
+                                name = 'delivery'
+                                title = 'EMS – курьерская служба Почты России'
+                                text = 'EMS Почта России — филиал ФГУП «Почта России», оператор экспресс-доставки. Входит в мировую систему EMS, созданную в 1989 году в рамках Всемирного почтового союза и объединяющую национальные службы экспресс-доставки 192 стран.'
+                                img = 'assets/img/checkout/ems.png'
+                            )
+                            +checkout-radio(
+                                id=4
+                                name = 'delivery'
+                                title = 'Самовывоз'
+                                text != 'Вы&nbsp;можете самостоятельно получить заказ на&nbsp;нашем складе в&nbsp;Саратове. Адрес и&nbsp;схема проезда указана в разделе <a href="contacts">«Контактная информация»</a>.'
+                            )
+                            +checkout-radio(
+                                id=5
+                                name = 'delivery'
+                                title = 'Курьерская доставка'
+                                text = 'В Саратове и Энгельсе мы осуществляем бесплатную курьерскую доставку товаров. Время доставки согласовывается предварительно по телефону.'
+                            )
+                        .checkout__section__col
+
+                section.checkout__section
+                    h3.checkout__h Адрес доставки
+                    .checkout__section__row
+                        .checkout__section__col
+                            .input-group._required.js-toggle-hidden__item(data-delivery="1")
+                                label(for="checkout_sdek_city") Город доставки
+                                input.js-cdek-autocomplete(type="text" id="checkout_sdek_city" name="sdek_city" retuired)
+                                span.input-group__msg Начните набирать название города.
+                            .input-group._checkbox
+                                label.checkbox
+                                    input(type="radio" checked name="sdek_tariff_id")
+                                    span.checkbox__text Доставка «до склада»
+                                label.checkbox
+                                    input(type="radio" name="sdek_tariff_id")
+                                    span.checkbox__text Доставка «до двери»
+                            .input-group._required
+                                label(for="checkout_country") Страна
+                                input(type="text" id="checkout_country" name="country" value="Россия" required disabled)
+                            .input-group
+                                label(for="checkout_region") Область, край, штат
+                                input(type="text" id="checkout_region" name="region" disabled)
+                            .input-group
+                                label(for="checkout_city") Город
+                                input(type="text" id="checkout_city" name="city" disabled)
+                            .input-group._required.js-toggle-hidden__item(data-delivery="5")
+                                label(for="checkout_address") Адрес
+                                input(type="text" id="checkout_address" name="address" required)
+                        .checkout__section__col
+                            p.checkout__help Пожалуйста, будьте внимательны при заполнении адреса доставки.
+
+                section.checkout__section
+                    h3.checkout__h Способы оплаты:
+                    .checkout__section__row
+                        .checkout__section__col
+                            +checkout-radio(
+                                name = 'payment'
+                                checked = true
+                                title = 'Яндекс.Касса'
+                                text = 'Оплата с произвольной банковской карты, из кошелька в Яндекс.Деньгах и системе WebMoney, наличными через терминалы, через Альфа-Клик, через интернет-банк Промсвязьбанка, через QIWI Wallet, наличными за пределами России.'
+                                img = 'assets/img/checkout/yk.png'
+                                imgWebp = 'assets/img/checkout/yk.webp'
+                            )
+                            +checkout-radio(
+                                name = 'payment'
+                                title = 'PayPal'
+                                text = 'Мировой лидер онлайн-платежей. Миллионы покупателей пользуются PayPal по одной причине: это удобно. Для оплаты нужен только электронный адрес и пароль – это быстрее, чем достать бумажник.'
+                                img = 'assets/img/checkout/pp.png'
+                                imgWebp = 'assets/img/checkout/pp.webp'
+                            )
+                            +checkout-radio(
+                                name = 'payment'
+                                title = 'Наложенный платеж'
+                                text != 'Оплата товара при получении.<br>Почта России взимает комиссию за наложенный платеж. Сумма комиссии зависит от стоимости заказа и составляет от 2% (но не менее 50 рублей).'
+                            )
+                        .checkout__section__col
+
+
+
+            .checkout__cost.js-checkout__cost
+                .container
+                    button.checkout__cost__btn.btn._ondark(type="submit" name="ms2_action" value="order/submit")
+                        span.btn__inner Сделать заказ!
+                    h3.checkout__cost__h Итого:
+                        span.checkout__cost__color.checkout__cost__total
+                            span(id="ms2_order_cost") 10 086
+                            |
+                            | ₽
+                        span.js-order-delivery-cost , в том числе доставка:
+                            span.checkout__cost__color
+                                span(id="ms2_order_delivery_cost") 286
+                                |
+                                | ₽
+                        span.checkout__cost__discount.ms2ka_discount_wrapper . Скидка:
+                            span.checkout__cost__color
+                                span.ms2ka_discount 490
+                                |
+                                | ₽

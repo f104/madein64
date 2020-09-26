@@ -1,0 +1,17 @@
+.popup(id="login")
+    h3.popup__h Авторизация
+    form.login-form
+        .input-group._required
+            label E-mail
+            input(type="email" name="email" required)
+            p.input-group__msg Укажите email, которые вы использовали при регистрации или оформлении заказа.
+        .input-group._required
+            label Пароль
+            input(type="password" name="password" required)
+            p.input-group__msg Если вы не помните свой пароль – просто оставьте это поле пустым и вы получите новый, вместе со ссылкой на активацию.
+        .input-group
+            .login-form__text Нет аккаунта? Пожалуйста, 
+                a.js-popup(href="#register") зарегистрируйтесь
+            .login-form__btn
+                button.btn._primary(type="submit")
+                    span.btn__inner Войти

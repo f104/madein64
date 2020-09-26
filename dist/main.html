@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>madein64.ru :: Сделано в Саратове</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no"><link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="manifest" href="assets/site.webmanifest">
+<link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<meta name="msapplication-TileColor" content="#00a300">
+<meta name="msapplication-config" content="assets/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Description">
+    <meta property="og:url" content="https://madein64.ru">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="madein64.ru :: Сделано в Саратове">
+    <meta property="twitter:title" content="madein64.ru :: Сделано в Саратове">
+    <meta property="og:description" content="Description">
+    <meta property="twitter:description" content="Description">
+    <meta property="og:image" content="https://madein64.ru/share.png">
+  </head>
+  <body class="body">
+        <header class="header">
+          <div class="header__top">
+            <div class="container">
+              <div class="header__top__inner">
+                <div class="header__top__m-menu">
+                  <button class="menu-toggle js-m-menu__toggler"><span class="menu-toggle__box"><span class="menu-toggle__inner"></span></span></button>
+                </div>
+                <ul class="header__top__menu">
+                  <li class="header__top__menu__item"><a class="header__top__menu__link" href="main.html">Главная</a></li>
+                  <li class="header__top__menu__item"><a class="header__top__menu__link" href="catalog.html">Каталог</a></li>
+                  <li class="header__top__menu__item"><a class="header__top__menu__link" href="#">Информация</a></li>
+                </ul>
+                <ul class="header__top__menu">
+                  <li class="header__top__menu__item"><a class="header__top__menu__link js-popup" href="#login">Вход</a></li>
+                  <li class="header__top__menu__item"><a class="header__top__menu__link js-popup" href="#register">Регистрация</a></li>
+                </ul>
+                <div class="header__cart"><span class="header__cart__toggler js-header-cart__toggler"><i class="icon-basket"></i>Корзина:<strong>2</strong></span>
+                  <div class="header__cart__dropdown js-header-cart__dropdown">
+                    <h5 class="header__cart__dropdown__h">Корзина</h5>
+                    <div class="header__cart__dropdown__empty hidden">Вы пока ничего не выбрали.</div>
+                    <div class="header__cart__dropdown__full">
+                      <ul class="header__cart__dropdown__products">
+                            <div class="product-item-header"><a class="product-item-header__image" href="product.html"><img class="lazyload product-item-header__image__img cover-img" src="assets/img/products/mvsh5_1_sm.jpg" alt="Шампуры-самокруты МВШ-5"></a>
+                              <div class="product-item-header__content">
+                                <h5 class="product-item-header__h"><a class="product-item-header__h__a" href="product.html">Шампуры-самокруты МВШ-5</a></h5>
+                                <p class="product-item-header__price">3500 ₽</p>
+                              </div>
+                            </div>
+                            <div class="product-item-header"><a class="product-item-header__image" href="product.html"><img class="lazyload product-item-header__image__img cover-img" src="assets/img/products/garlic1_1_sm.jpg" alt="Чёрный чеснок креманка (3 головки)"></a>
+                              <div class="product-item-header__content">
+                                <h5 class="product-item-header__h"><a class="product-item-header__h__a" href="product.html">Чёрный чеснок креманка (3 головки)</a></h5>
+                                <p class="product-item-header__price">500 ₽</p>
+                              </div>
+                            </div>
+                      </ul>
+                      <h5 class="header__cart__dropdown__h">Итого: 4000 ₽</h5><a class="btn _ondark header__cart__dropdown__btn" href="checkout.html"><span class="btn__inner">Оформить заказ</span></a>
+                      <p>Вы сможете изменить заказ на этапе оформления.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header__bottom">
+            <div class="container">
+              <div class="header__bottom__inner"><a class="header__logo" href="index.html">Волжская пастила
+                  <!--img.header__logo__img(src="assets/img/logo.svg" alt="madein64.ru")--></a>
+                <ul class="header__bottom__menu">
+                  <li class="header__bottom__menu__item"><a class="header__bottom__menu__link" href="vendor.html">Ленивый шашлычник</a></li>
+                  <li class="header__bottom__menu__item"><a class="header__bottom__menu__link" href="vendor.html">Черный чеснок</a></li>
+                  <li class="header__bottom__menu__item"><a class="header__bottom__menu__link" href="vendor.html">Волжская пастила</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="m-nav js-m-menu__menu">
+            <div class="m-nav__inner">
+              <ul class="m-nav__menu">
+                <li class="m-nav__menu__item"><a class="m-nav__menu__link" href="main.html">Главная</a>
+                  <ul class="m-nav__menu _sub">
+                    <li class="m-nav__menu__item _active"><a class="m-nav__menu__link" href="vendor.html">Ленивый шашлычник</a></li>
+                    <li class="m-nav__menu__item"><a class="m-nav__menu__link" href="vendor.html">Черный чеснок</a></li>
+                    <li class="m-nav__menu__item"><a class="m-nav__menu__link" href="vendor.html">Волжская пастила</a></li>
+                  </ul>
+                </li>
+                <li class="m-nav__menu__item"><a class="m-nav__menu__link" href="catalog.html">Каталог</a></li>
+                <li class="m-nav__menu__item"><a class="m-nav__menu__link" href="#">Информация</a></li>
+              </ul>
+              <ul class="m-nav__menu">
+                <li class="m-nav__menu__item"><a class="m-nav__menu__link js-popup" href="#login">Вход</a></li>
+                <li class="m-nav__menu__item"><a class="m-nav__menu__link js-popup" href="#register">Регистрация</a></li>
+              </ul>
+            </div>
+          </div>
+        </header>
+    <div class="content">
+      <div class="index">
+        <div class="index__section">
+          <div class="vendor-intro">
+            <div class="container">
+              <h3 class="vendor-intro__h">Ленивый шашлычник</h3>
+              <p class="vendor-intro__desc">При приготовлении шашлыка кому-то обязательно приходиться сидеть и контролировать, чтобы мясо не сгорело. Много времени и стараний уходит на вращение шампуров вручную. Механизм Вращения Шампуров сделает всю работу за вас — автоматически. И самое главное — он не даст сгореть мясу и ваши друзья будут всегда довольны вашим мастерством!</p>
+              <div class="vendor-intro__btn"><a class="btn _primary" href="/vendor.html"><span class="btn__inner">Отдыхай, а не крути!</span></a></div>
+            </div>
+            <div class="vendor-intro__bg">
+              <picture class="vendor-intro__bg__pictire">
+                <source type="image/webp" srcset="assets/img/skewers.webp"/>
+                <source type="image/jpeg" srcset="assets/img/skewers.jpg"/><img src="assets/img/skewers.jpg" alt="Ленивый шашлычник"/>
+              </picture>
+            </div>
+          </div>
+          <div class="container">
+            <div class="product-list _grid">
+              <div class="product-list__inner">
+                    <div class="product-list__item product-item"><a class="product-item__image" href="product.html"><img class="lazyload product-item__image__img cover-pic" src="assets/img/products/mvsh5_1_sm.jpg" alt="Шампуры-самокруты МВШ-5"></a>
+                      <div class="product-item__content">
+                        <div class="product-item__content__header">
+                          <ul class="product-item__category">
+                            <li class="product-item__category__item"><a class="product-item__category__a" href="#">Шампуры-самокруты</a></li>
+                            <li class="product-item__category__item"><a class="product-item__category__a" href="#">Категория</a></li>
+                          </ul>
+                          <h5 class="product-item__h"><a class="product-item__h__a" href="product.html">Шампуры-самокруты МВШ-5</a></h5>
+                          <p class="product-item__desc">Компактный набор из пяти шампуров. Идеален для пикника в небольшой компании.</p>
+                        </div>
+                        <p class="product-item__price">3500 ₽
+                        </p>
+                        <form>
+                          <button class="btn _primary"> <span class="btn__inner">В корзину</span></button>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="product-list__item product-item"><a class="product-item__image" href="product.html"><img class="lazyload product-item__image__img cover-pic" src="assets/img/products/uhovarka_1_sm.jpg" alt="Уховарка"></a>
+                      <div class="product-item__content">
+                        <div class="product-item__content__header">
+                          <ul class="product-item__category">
+                            <li class="product-item__category__item"><a class="product-item__category__a" href="#">Аксессуары</a></li>
+                            <li class="product-item__category__item"><a class="product-item__category__a" href="#">Категория</a></li>
+                          </ul>
+                          <h5 class="product-item__h"><a class="product-item__h__a" href="product.html">Уховарка</a></h5>
+                          <p class="product-item__desc">Уховарка предназначена для удобного приготовления вкусной ухи на природе. Ее необычная форма в виде конуса позволяет быстро нагреть воду за счет широкого дна и узкой горловины с плотно прилегающей крышкой. Такая форма не позволяет ухе быстро остыть, как это происходит в обычной кастрюле, а при переносе уховарки ее содержимое не разольется.</p>
+                        </div>
+                        <p class="product-item__price">3500 ₽
+                        </p>
+                        <form>
+                          <button class="btn _primary"> <span class="btn__inner">В корзину</span></button>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="product-list__item product-item"><a class="product-item__image" href="product.html"><img class="lazyload product-item__image__img cover-pic" src="assets/img/products/mvsh5_1_sm.jpg" alt="Шампуры-самокруты МВШ-5"></a>
+                      <div class="product-item__content">
+                        <div class="product-item__content__header">
+                          <ul class="product-item__category">
+                            <li class="product-item__category__item"><a class="product-item__category__a" href="#">Шампуры-самокруты</a></li>
+                            <li class="product-item__category__item"><a class="product-item__category__a" href="#">Категория</a></li>
+                          </ul>
+                          <h5 class="product-item__h"><a class="product-item__h__a" href="product.html">Шампуры-самокруты МВШ-5</a></h5>
+                          <p class="product-item__desc">Компактный набор из пяти шампуров. Идеален для пикника в небольшой компании.</p>
+                        </div>
+                        <p class="product-item__price">3500 ₽
+                        </p>
+                        <form>
+                          <button class="btn _primary"> <span class="btn__inner">В корзину</span></button>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="product-list__item product-item"><a class="product-item__image" href="product.html"><img class="lazyload product-item__image__img cover-pic" src="assets/img/products/mvsh7_1_sm.jpg" alt="Шампуры-самокруты МВШ-7">
+                        <div class="product-item__badges"><span class="product-badge _sale">Скидка</span></div></a>
+                      <div class="product-item__content">
+                        <div class="product-item__content__header">
+                          <ul class="product-item__category">
+                            <li class="product-item__category__item"><a class="product-item__category__a" href="#">Шампуры-самокруты</a></li>
+                          </ul>
+                          <h5 class="product-item__h"><a class="product-item__h__a" href="product.html">Шампуры-самокруты МВШ-7</a></h5>
+                          <p class="product-item__desc">Набор из семи шампуров. Сочетает компактные размеры и возможность приготовить большую порцию шашлыка.</p>
+                        </div>
+                        <p class="product-item__price">
+                          <del class="product-item__price__old">4400 ₽</del>4100 ₽
+                        </p>
+                        <form>
+                          <button class="btn _primary"> <span class="btn__inner">В корзину</span></button>
+                        </form>
+                      </div>
+                    </div>
+              </div>
+              <div class="product-list__btn"><a class="btn _secondary" href="catalog-nekruti.html"><span class="btn__inner">Все товары</span> 
+                  &rarr;</a></div>
+            </div>
+            <div class="article-list">
+              <div class="article-list__inner">
+                    <div class="article-item article-list__item">
+                      <div class="article-item__inner"><a class="article-item__image" href="article.html"><img class="lazyload article-item__image__img cover-pic" data-src="assets/img/articles/1_sm.jpg" alt="Шашлык тоже бывает ленивым"></a>
+                        <h4 class="article-item__h"><a href="article.html">Шашлык тоже бывает ленивым</a></h4>
+                        <p class="article-item__desc">Когда мы готовим мясо на костре, то, конечно же, рассчитываем при этом на две вещи: вкусно покушать и снискать славу самого крутого шашлычника. И обычно для этого мы готовы пожертвовать временем. Приличным его отрезком. Вместо того чтобы общаться, играть в подвижные игры, купаться, мы пыхтим над костром и без конца отвечаем на один и тот же вопрос «Ты скоро там?» Однако все можно сделать совершенно иначе. Легче. Быстрее. Более профессионально. <a class="article-item__read" href="article.html">Читать →</a></p>
+                      </div>
+                    </div>
+                    <div class="article-item article-list__item">
+                      <div class="article-item__inner"><a class="article-item__image" href="article.html">
+                          <picture class="article-item__image__img cover-pic">
+                            <source type="image/webp" data-srcset="assets/img/articles/2_sm.webp">
+                            <source type="image/jpg" data-srcset="assets/img/articles/2_sm.jpg"><img class="lazyload" data-src="assets/img/articles/2_sm.jpg" alt="Уха на костре – быстро и просто">
+                          </picture></a>
+                        <h4 class="article-item__h"><a href="article.html">Уха на костре – быстро и просто</a></h4>
+                        <p class="article-item__desc">И рыболову, и туристу, и просто любителю пикников иногда хочется внести что-то новое в привычное меню на природе. И уховарка от «Ленивого шашлычника» может стать хорошим решением этой задачи. Ведь наваристый рыбный суп в этой посуде готовится быстро и просто, а вкус не отличается от шедевров, на которые уходит по полдня. Согласитесь, звучит заманчиво — всегда получать идеальный результат и не жертвовать драгоценными минутами общения. Но как это возможно? <a class="article-item__read" href="article.html">Читать →</a></p>
+                      </div>
+                    </div>
+                    <div class="article-item article-list__item">
+                      <div class="article-item__inner"><a class="article-item__image" href="article.html">
+                          <picture class="article-item__image__img cover-pic">
+                            <source type="image/webp" data-srcset="assets/img/articles/3_sm.webp">
+                            <source type="image/jpg" data-srcset="assets/img/articles/3_sm.jpg"><img class="lazyload" data-src="assets/img/articles/3_sm.jpg" alt="Блюда на мангале разных народов мира">
+                          </picture></a>
+                        <h4 class="article-item__h"><a href="article.html">Блюда на мангале разных народов мира</a></h4>
+                        <p class="article-item__desc">Намечается пикник? Конечно, в меню будет традиционный шашлык из любимого мяса. Конечно, несколько салатов и ассорти из овощей. Но что если хочется разнообразить привычный набор блюд чем-то новым? В решении этой задачи вам могут помочь кулинарные традиции разных народов мира. Предлагаем вам отправиться в гастрономическое путешествие и узнать, что же готовят в других странах, когда собираются у костра. <a class="article-item__read" href="article.html">Читать →</a></p>
+                      </div>
+                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="index__section">
+          <div class="vendor-intro _garlic">
+            <div class="container">
+              <h3 class="vendor-intro__h">Черный чеснок</h3>
+              <p class="vendor-intro__desc">Черный чеснок — одновременно уникальная пищевая добавка и самостоятельное экзотическое блюдо с неповторимым вкусом и ароматом. Он содержит витамины, минералы, является одним из самых богатых источников антиоксидантов, поэтому эффективно повышает иммунитет, препятствует старению. Благодаря своим полезным свойствам он является важной составляющей диетического питания.</p>
+              <div class="vendor-intro__btn"><a class="btn _primary" href="/vendor.html"><span class="btn__inner">Давайте знакомиться!</span></a></div>
+            </div>
+            <div class="vendor-intro__bg">
+              <picture class="vendor-intro__bg__pictire">
+                <source type="image/webp" srcset="assets/img/garlic.webp"/>
+                <source type="image/jpeg" srcset="assets/img/garlic.jpg"/><img src="assets/img/garlic.jpg" alt="Черный чеснок"/>
+              </picture>
+            </div>
+          </div>
+          <div class="container">
+            <div class="product-list _grid">
+              <div class="product-list__inner">
+                    <div class="product-list__item product-item"><a class="product-item__image" href="product.html"><img class="lazyload product-item__image__img cover-pic" src="assets/img/products/garlic1_1_sm.jpg" alt="Чёрный чеснок креманка (3 головки)"></a>
+                      <div class="product-item__content">
+                        <div class="product-item__content__header">
+                          <ul class="product-item__category">
+                            <li class="product-item__category__item"><a class="product-item__category__a" href="#">Креманка</a></li>
+                          </ul>
+                          <h5 class="product-item__h"><a class="product-item__h__a" href="product.html">Чёрный чеснок креманка (3 головки)</a></h5>
+                          <p class="product-item__desc">«Подарочная» упаковка. В креманке на подложке уложены 3 головки чёрного чеснока.</p>
+                        </div>
+                        <p class="product-item__price">1500 ₽
+                        </p>
+                        <form>
+                          <button class="btn _primary"> <span class="btn__inner">В корзину</span></button>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="product-list__item product-item"><a class="product-item__image" href="product.html"><img class="lazyload product-item__image__img cover-pic" src="assets/img/products/garlic2_1_sm.jpg" alt="Чёрный чеснок крафт пакет (1 головка)"></a>
+                      <div class="product-item__content">
+                        <div class="product-item__content__header">
+                          <ul class="product-item__category">
+                            <li class="product-item__category__item"><a class="product-item__category__a" href="#">Крафт-пакет</a></li>
+                          </ul>
+                          <h5 class="product-item__h"><a class="product-item__h__a" href="product.html">Чёрный чеснок крафт пакет (1 головка)</a></h5>
+                          <p class="product-item__desc">В крафтовом пакете упакована одна головка чёрного чеснока.</p>
+                        </div>
+                        <p class="product-item__price">500 ₽
+                        </p>
+                        <form>
+                          <button class="btn _primary"> <span class="btn__inner">В корзину</span></button>
+                        </form>
+                      </div>
+                    </div>
+              </div>
+            </div>
+            <div class="article-list">
+              <div class="article-list__inner">
+                    <div class="article-item article-list__item">
+                      <div class="article-item__inner"><a class="article-item__image" href="article.html">
+                          <picture class="article-item__image__img cover-pic">
+                            <source type="image/webp" data-srcset="assets/img/articles/4_sm.webp">
+                            <source type="image/jpg" data-srcset="assets/img/articles/4_sm.jpg"><img class="lazyload" data-src="assets/img/articles/4_sm.jpg" alt="История появления">
+                          </picture></a>
+                        <h4 class="article-item__h"><a href="article.html">История появления</a></h4>
+                        <p class="article-item__desc">История появления черного чеснока связана с древними традициями Кореи и Таиланда, где он издавна почитается: его добавляют в самые различные блюда и энергетические напитки. В соответствии с даосскими верованиями, он продлевает жизнь. С недавних пор черный чеснок начал набирать популярность по всему миру, в первую очередь — в США и Европе. <a class="article-item__read" href="article.html">Читать →</a></p>
+                      </div>
+                    </div>
+                    <div class="article-item article-list__item">
+                      <div class="article-item__inner"><a class="article-item__image" href="article.html">
+                          <picture class="article-item__image__img cover-pic">
+                            <source type="image/webp" data-srcset="assets/img/articles/5_sm.webp">
+                            <source type="image/jpg" data-srcset="assets/img/articles/5_sm.jpg"><img class="lazyload" data-src="assets/img/articles/5_sm.jpg" alt="Как делают чёрный чеснок">
+                          </picture></a>
+                        <h4 class="article-item__h"><a href="article.html">Как делают чёрный чеснок</a></h4>
+                        <p class="article-item__desc">Чёрный чеснок — это обычный натуральный чеснок, ферментированный при определенной температуре и влажности. Для этого он на протяжении 50 дней находится в специальных условиях. В это время и происходит ферментация, с участием сахаров и аминокислот в его составе. В процессе созревания образуется меланоидин, который и обеспечивает продукту чёрный цвет: это то самое натуральное вещество, которое нам хорошо знакомо по тёмно-коричневому цвету корочки хлеба или хорошо прожаренного шашлыка. <a class="article-item__read" href="article.html">Читать →</a></p>
+                      </div>
+                    </div>
+                    <div class="article-item article-list__item">
+                      <div class="article-item__inner"><a class="article-item__image" href="article.html">
+                          <picture class="article-item__image__img cover-pic">
+                            <source type="image/webp" data-srcset="assets/img/articles/6_sm.webp">
+                            <source type="image/jpg" data-srcset="assets/img/articles/6_sm.jpg"><img class="lazyload" data-src="assets/img/articles/6_sm.jpg" alt="Польза и вкус">
+                          </picture></a>
+                        <h4 class="article-item__h"><a href="article.html">Польза и вкус</a></h4>
+                        <p class="article-item__desc">После ферментации в чесноке значительно повышается содержание антиоксидантов и фруктозы. По данным исследований, в чёрном чесноке количество антиоксидантов в 2 раза больше, чем в белом, а его антиоксидантная способность (TEAC) составляет 38 мкмоль/г: для обычного чеснока это 13 мкмоль/г. <a class="article-item__read" href="article.html">Читать →</a></p>
+                      </div>
+                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="index__section">
+          <div class="vendor-intro _pastila">
+            <div class="container">
+              <h3 class="vendor-intro__h">Волжская пастила</h3>
+              <p class="vendor-intro__desc">Только фрукты, только ягоды, только овощи. В нашей продукции категорически исключены такие добавки, как – мука, желатин, крахмал, красители, подсластители, консерванты и пр.</p>
+              <div class="vendor-intro__btn"><a class="btn _primary" href="/vendor.html"><span class="btn__inner">Продукция для любителей натурального</span></a></div>
+            </div>
+            <div class="vendor-intro__bg">
+              <picture class="vendor-intro__bg__pictire">
+                <source type="image/webp" srcset="assets/img/pastila.webp"/>
+                <source type="image/jpeg" srcset="assets/img/pastila.jpg"/><img src="assets/img/pastila.jpg" alt="Волжская пастила"/>
+              </picture>
+            </div>
+          </div>
+          <div class="container">
+            <div class="product-list _grid">
+              <div class="product-list__inner">
+                    <div class="product-list__item product-item"><a class="product-item__image" href="product.html"><img class="lazyload product-item__image__img cover-pic" src="assets/img/products/pastila1_1_sm.jpg" alt="Пастила облепиховая"></a>
+                      <div class="product-item__content">
+                        <div class="product-item__content__header">
+                          <ul class="product-item__category">
+                            <li class="product-item__category__item"><a class="product-item__category__a" href="#">Коробка крафт</a></li>
+                          </ul>
+                          <h5 class="product-item__h"><a class="product-item__h__a" href="product.html">Пастила облепиховая</a></h5>
+                          <p class="product-item__desc">Состав: облепиха, яблоко, мед (100 грамм).</p>
+                        </div>
+                        <p class="product-item__price">1500 ₽
+                        </p>
+                        <form>
+                          <button class="btn _primary"> <span class="btn__inner">В корзину</span></button>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="product-list__item product-item"><a class="product-item__image" href="product.html"><img class="lazyload product-item__image__img cover-pic" src="assets/img/products/pastila2_1_sm.jpg" alt="Набор «Макси»"></a>
+                      <div class="product-item__content">
+                        <div class="product-item__content__header">
+                          <ul class="product-item__category">
+                            <li class="product-item__category__item"><a class="product-item__category__a" href="#">Коробка крафт</a></li>
+                          </ul>
+                          <h5 class="product-item__h"><a class="product-item__h__a" href="product.html">Набор «Макси»</a></h5>
+                          <p class="product-item__desc">Пастила (микс) - 230 грамм, фрукты (микс) - 200 грамм</p>
+                        </div>
+                        <p class="product-item__price">2000 ₽
+                        </p>
+                        <form>
+                          <button class="btn _primary"> <span class="btn__inner">В корзину</span></button>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="product-list__item product-item"><a class="product-item__image" href="product.html"><img class="lazyload product-item__image__img cover-pic" src="assets/img/products/pastila3_1_sm.jpg" alt="Фруктовый микс"></a>
+                      <div class="product-item__content">
+                        <div class="product-item__content__header">
+                          <ul class="product-item__category">
+                            <li class="product-item__category__item"><a class="product-item__category__a" href="#">Крафт-пакет</a></li>
+                          </ul>
+                          <h5 class="product-item__h"><a class="product-item__h__a" href="product.html">Фруктовый микс</a></h5>
+                          <p class="product-item__desc">Состав: сушёные фрукты и ягоды (50 грамм).</p>
+                        </div>
+                        <p class="product-item__price">500 ₽
+                        </p>
+                        <form>
+                          <button class="btn _primary"> <span class="btn__inner">В корзину</span></button>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="product-list__item product-item"><a class="product-item__image" href="product.html"><img class="lazyload product-item__image__img cover-pic" src="assets/img/products/pastila1_1_sm.jpg" alt="Пастила облепиховая"></a>
+                      <div class="product-item__content">
+                        <div class="product-item__content__header">
+                          <ul class="product-item__category">
+                            <li class="product-item__category__item"><a class="product-item__category__a" href="#">Коробка крафт</a></li>
+                          </ul>
+                          <h5 class="product-item__h"><a class="product-item__h__a" href="product.html">Пастила облепиховая</a></h5>
+                          <p class="product-item__desc">Состав: облепиха, яблоко, мед (100 грамм).</p>
+                        </div>
+                        <p class="product-item__price">1500 ₽
+                        </p>
+                        <form>
+                          <button class="btn _primary"> <span class="btn__inner">В корзину</span></button>
+                        </form>
+                      </div>
+                    </div>
+              </div>
+              <div class="product-list__btn"><a class="btn _secondary" href="catalog-pastila.html"><span class="btn__inner">Все натуральные продукты</span> 
+                  &rarr;</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <footer class="footer">
+          <div class="container">
+            <div class="footer__inner">
+              <div class="footer__nav">
+                <div class="footer__nav__inner">
+                  <div class="footer__menu">
+                    <div class="footer__menu__h">Каталог</div>
+                    <ul class="footer__menu__list">
+                      <li class="footer__menu__list__item"><a href="catalog-nekruti.html">Ленивый шашлычник</a></li>
+                      <li class="footer__menu__list__item"><a href="catalog-garlic.html">Черный чеснок</a></li>
+                      <li class="footer__menu__list__item"><a href="catalog-pastila.html">Пастила</a></li>
+                    </ul>
+                  </div>
+                  <div class="footer__menu">
+                    <div class="footer__menu__h">Информация</div>
+                    <ul class="footer__menu__list">
+                      <li class="footer__menu__list__item"><a href="#">О магазине</a></li>
+                      <li class="footer__menu__list__item"><a href="#">Оплата и доставка</a></li>
+                      <li class="footer__menu__list__item"><a href="contacts">Контакты</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="footer__info">
+                <ul class="footer__contacts">
+                  <li class="footer__contacts__item"><i class="icon-location"></i>Адрес: 410012 Россия, Саратов, ул. Краевая, 85</li>
+                  <li class="footer__contacts__item"><i class="icon-phone"></i>Телефон: <a href="tel:+78452123456">+7 8452 123-456</a></li>
+                  <li class="footer__contacts__item"><i class="icon-mail"></i>E-mail: <a href="mailto:info@madein64.ru">info@madein64.ru</a></li>
+                </ul>
+                <ul class="footer__docs">
+                  <li class="footer__docs__item"><a href="docs/doc">Публичный договор-оферта </a></li>
+                  <li class="footer__docs__item"><a href="docs/doc">Обработка персональных данных </a></li>
+                </ul>
+                <ul class="footer__credits">
+                  <li class="footer__credits__item">ИП Родионов А.Г. © 2019</li>
+                  <li class="footer__credits__item"><a href="mailto:kirusanov@gmail.com" title="Создание и поддержка сайта">Kirill A.</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+    <div class="hidden">
+      <div class="popup" id="login">
+        <h3 class="popup__h">Авторизация</h3>
+        <form class="login-form">
+          <div class="input-group _required">
+            <label>E-mail</label>
+            <input type="email" name="email" required>
+            <p class="input-group__msg">Укажите email, которые вы использовали при регистрации или оформлении заказа.</p>
+          </div>
+          <div class="input-group _required">
+            <label>Пароль</label>
+            <input type="password" name="password" required>
+            <p class="input-group__msg">Если вы не помните свой пароль – просто оставьте это поле пустым и вы получите новый, вместе со ссылкой на активацию.</p>
+          </div>
+          <div class="input-group">
+            <div class="login-form__text">Нет аккаунта? Пожалуйста, <a class="js-popup" href="#register">зарегистрируйтесь</a></div>
+            <div class="login-form__btn">
+              <button class="btn _primary" type="submit"><span class="btn__inner">Войти</span></button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="popup" id="register">
+        <h3 class="popup__h">Регистрация</h3>
+        <form class="login-form">
+          <div class="input-group _required">
+            <label>E-mail</label>
+            <input type="email" name="email" required>
+            <p class="input-group__msg">На указанный email придёт письмо со ссылкой для активации.</p>
+          </div>
+          <div class="input-group _required">
+            <label>Пароль</label>
+            <input type="password" name="password" required>
+            <p class="input-group__msg">Вы можете указать свой пароль, или оставить это поле пустым и тогда он будет сгенерирован автоматически.</p>
+          </div>
+          <div class="input-group">
+            <p class="login-form__text">Уже зарегистрированы? <a class="js-popup" href="#login">Войдите</a></p>
+            <div class="login-form__btn">
+              <button class="btn _primary" type="submit"><span class="btn__inner">Зарегистрироваться</span></button>
+            </div>
+          </div>
+          <div class="input-group">
+            <p class="input-group__msg"><span class="color-warning">* </span>Обязательные поля. Отправляя информацию, вы соглашаетесь с&nbsp;<a href="#" target="_blank">условиями обработки персональных данных</a>.</p>
+          </div>
+        </form>
+      </div>
+    </div><span class="back-top js-back-top">
+      <button class="btn _primary _round" title="наверх"><span class="btn__inner"> <i class="icon-up-big"></i></span></button></span>
+    <div class="content-overlay js-m-menu__overlay"></div>
+    <script src="//ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+    <script>
+      WebFont.load({
+          google: { "families": [
+                  "PT+Sans:400,400i,700:cyrillic",
+                  "Pacifico:400:cyrillic"
+              ]},
+          active: function() {
+              sessionStorage.fonts = true;
+          }
+      });
+    </script>
+    <link rel="stylesheet" href="assets/css/main.css?v=1.0.1">
+    <script src="assets/js/vendors~main.bundle.js"></script>
+    <script src="assets/js/main.bundle.js?v=1.0.1"></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+/*
+Content overlay when menu opened
+*/
+.content-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $color-heading;
+    opacity: 0;
+    display: none;
+    @include transition(opacity);
+}
+.body._frozen {
+    .content-overlay {
+        display: block;
+        opacity: .4;
+    }
+}

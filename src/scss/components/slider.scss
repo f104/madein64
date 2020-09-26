@@ -1,0 +1,70 @@
+.slider {
+    $root: &;
+    font-size: 0;
+    &__slide {
+        display: block;
+        cursor: grab;
+        &__zoom {
+            position: absolute;
+            top: .8rem;
+            left: .8rem;
+            background-color: $color-gray-dark;
+            color: $color-heading;
+            width: 2rem;
+            line-height: 2rem;
+            font-size: 1rem;
+            text-align: center;
+            border-radius: 50%;
+            @include transition(color);
+            &:hover {
+                color: lighten($color-heading, 20%);
+            }
+        }
+    }
+    &__picture {
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    &._product, &._nav {
+        margin-bottom: 1rem;
+        #{$root} {
+            &__slide {
+                border: 1px solid $color-gray;
+                @include transition(border-color);
+            }
+        }
+    }
+
+    &._vendor {
+        margin-bottom: -3rem;
+        background-color: $color-bg-gray;
+        &__slide {
+            border: 1px solid $color-gray;
+            @include transition(border-color);
+        }
+    }
+
+    &._nav {
+        #{$root} {
+            &__slide {
+                cursor: pointer;
+            }
+            &__picture img {
+                width: 100px;
+            }
+        }
+        .slick-slide {
+            margin-right: .5rem;
+            &.slick-active {
+                #{$root} {
+                    &__slide {
+                        border-color: $color-primary;
+                    }
+                }
+            }
+        }
+    }
+}

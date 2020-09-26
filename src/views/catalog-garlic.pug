@@ -1,0 +1,46 @@
+extends _includes/layout
+include _includes/blocks/catalog/product-filter
+
+block title
+    title Каталог товаров :: Чёрный чеснок :: madein64.ru
+
+block content
+    
+    +crumbs()(
+        crumbs = {
+            'Главная': '/',
+            'Черный чеснок': '/vendor.html',
+            'Каталог': '',
+        }
+    )
+    .container
+        .catalog
+            .catalog__aside
+                +product-filter(
+                    category1='Креманка'
+                    category2='Крафт-пакет'
+                )
+            .catalog__content
+                .product-list
+                    h1.product-list__h Чёрный чеснок
+                    .product-list__header
+                        select.js-select
+                            option Сначала дешевые
+                            option Сначала дорогие
+                    .product-list__inner
+                        +product-item(
+                            full=true
+                            title='Чёрный чеснок креманка (3 головки)'
+                            price='1500 ₽'
+                            desc='«Подарочная» упаковка. В креманке на подложке уложены 3 головки чёрного чеснока.'
+                            src='assets/img/products/garlic1_1_sm.jpg'
+                            categories=['Креманка']
+                        )
+                        +product-item(
+                            full=true
+                            title='Чёрный чеснок крафт пакет (1 головка)'
+                            price='500 ₽'
+                            desc='В крафтовом пакете упакована одна головка чёрного чеснока.'
+                            src='assets/img/products/garlic2_1_sm.jpg'
+                            categories=['Крафт-пакет']
+                        )

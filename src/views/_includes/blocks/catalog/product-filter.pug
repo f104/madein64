@@ -1,0 +1,40 @@
+mixin product-filter()
+    .product-filter
+        h5.product-filter__h Фильтр
+        form
+            fieldset.product-filter__fieldset
+                .range.js-range
+                    .range__text
+                        | Цена:
+                        span.js-range__text 2000
+                        |
+                        | ₽ –
+                        span.js-range__text 8500
+                        |
+                        | ₽
+                    .range__inputs
+                        | Цена:
+                        input(value="2000")
+                        | –
+                        input(value="8500")
+                    .js-range__target
+            fieldset.product-filter__fieldset
+                label.checkbox
+                    input(type="checkbox" checked)
+                    span.checkbox__text
+                        span.checkbox__text__inner= attributes.category1
+                        |
+                        | (7)
+                label.checkbox
+                    input(type="checkbox")
+                    span.checkbox__text
+                        span.checkbox__text__inner= attributes.category2
+                        |
+                        | (2)
+                if attributes.category3
+                    label.checkbox
+                        input(type="checkbox")
+                        span.checkbox__text
+                            span.checkbox__text__inner= attributes.category3
+                            |
+                            | (2)
