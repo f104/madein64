@@ -321,9 +321,6 @@ var app = {
         }
         require('libs/jquery.auto-complete.js');
         let xhr;
-        $input.on('keydown', function(e) {
-            if (e.keyCode == 13) return false;
-        });
         $input.autoComplete({
             minChars: 3,
             source: function (term, response) {
@@ -372,12 +369,12 @@ var app = {
                 $input.attr('data-selected', 'true');
                 return false;
             }
-            //        }).on('keypress', function(e) {
-            //            let code = e.keyCode || e.which;
-            //            if (code === 13) {
-            //                $(this).blur();
-            //                return false;
-            //            }
+        }).on('keypress', function (e) {
+            let code = e.keyCode || e.which;
+            if (code === 13) {
+                $(this).blur();
+                return false;
+            }
         }).on('keyup', function () {
             $(this).attr('data-selected', 'false');
         }).on('blur', function () {
