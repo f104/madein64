@@ -1,16 +1,20 @@
 .checkout {
     $root: &;
     margin-bottom: -3rem;
+
     &__section {
         margin-bottom: 3rem;
+
         &__row {
             @include media-breakpoint-up(lg) {
                 display: flex;
             }
         }
+
         &__col {
             @include media-breakpoint-up(lg) {
                 flex-grow: 1;
+
                 &:last-of-type {
                     width: 30%;
                     padding-left: 3rem;
@@ -20,31 +24,39 @@
             }
         }
     }
+
     &__h {
         font-family: $font-family-alt;
         font-size: 1.5rem;
         color: $color-heading;
         margin-bottom: 1rem;
     }
+
     &__help {
         background-color: $color-gray;
         padding: 1rem;
+
         a {
             @include link-in-text;
         }
     }
+
     &__cost {
         background-color: $color-primary;
         color: $color-primary-light;
         font-size: 1.2rem;
+
         &__color {
             color: $color-white;
             font-weight: 600;
         }
+
         &__total {
             font-size: 1.5rem;
         }
-        &__h, &__btn {
+
+        &__h,
+        &__btn {
             display: inline-block;
             margin-top: 1rem;
             margin-bottom: 1rem;
@@ -52,6 +64,7 @@
         }
     }
 }
+
 body.checkout__fixed-cost {
     .checkout {
         &__cost {
@@ -68,11 +81,19 @@ body.checkout__fixed-cost {
     display: block;
     margin-bottom: .5rem;
     cursor: pointer;
+    @include transition(opacity);
+
+    &._disabled {
+        opacity: .6;
+        pointer-events: none;
+    }
+
     &__inner {
         display: block;
         border: 1px solid $color-gray-dark;
         padding: .8rem 1rem 1rem 3rem;
         @include transition(border-color);
+
         &:before {
             content: '';
             position: absolute;
@@ -84,6 +105,7 @@ body.checkout__fixed-cost {
             background-color: $color-white;
             border: 1px solid $color-gray-dark;
         }
+
         &:after {
             font-family: fontello;
             font-size: .9rem;
@@ -96,34 +118,43 @@ body.checkout__fixed-cost {
             @include transition(opacity);
         }
     }
+
     input {
         display: none;
-        &:checked + #{$root}__inner {
+
+        &:checked+#{$root}__inner {
             border-color: $color-primary;
+
             &:after {
                 opacity: 1;
             }
         }
     }
+
     &__h {
         display: block;
         color: $color-heading;
         margin-bottom: .5rem;
     }
+
     &__text {
         font-size: .9rem;
+
         a {
             @include link-in-text;
         }
     }
+
     &__img {
         display: none;
+
         @include media-breakpoint-up(md) {
             display: block;
             height: 1.5rem;
             position: absolute;
             right: .8rem;
             top: .8rem;
+
             img {
                 height: 1.5rem;
             }

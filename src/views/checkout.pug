@@ -62,7 +62,7 @@ block content
                             | .
 
         form.ms2_form(id="msOrder" method="post").js-toggle-hidden
-            input(type="_hidden" name="cdek_city_id")
+            input(type="hidden" name="cdek_city_id")
             .container
 
                 section.checkout__section
@@ -138,7 +138,7 @@ block content
                     h3.checkout__h Адрес доставки
                     .checkout__section__row
                         .checkout__section__col
-                            .input-group._required.js-toggle-hidden__item(data-delivery="1")
+                            .input-group._required._loading.js-toggle-hidden__item(data-delivery="1")
                                 label(for="checkout_sdek_city") Город доставки
                                 input.js-cdek-autocomplete(type="text" id="checkout_sdek_city" name="sdek_city" retuired)
                                 span.input-group__msg Начните набирать название города.
