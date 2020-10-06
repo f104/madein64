@@ -101,6 +101,7 @@
         }
     }
     &__cart {
+        margin-left: .5rem;
         &__toggler {
             display: block;
             color: $color-white;
@@ -111,7 +112,6 @@
             line-height: $header-top-height-sm;
             padding: 0 map-get($container-paddings, 'sm');
             cursor: pointer;
-            margin-left: .5rem;
             margin-right: - map-get($container-paddings, 'sm');
             @include media-breakpoint-up(md) {
                 margin-right: 0;

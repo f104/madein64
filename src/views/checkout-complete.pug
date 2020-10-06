@@ -1,0 +1,21 @@
+extends _includes/layout
+include _includes/mixins/product-qty
+include _includes/blocks/checkout/checkout-radio
+
+block content
+
+    +crumbs()(
+        crumbs = {
+                'Главная': '/',
+                'Оформление заказа': ''
+            }
+    )
+    .checkout
+        .container
+
+            section.checkout__section
+                h3.checkout__h Спасибо за заказ!
+                .rte
+                    p Мы отправили вам письмо с информацией о заказе. В ближайшее время с вами свяжется наш менеджер.
+                    p Не торопитесь уходить, возможно вас заинтересуют другие наши 
+                        a(href="#") вкусные и натуральные продукты.

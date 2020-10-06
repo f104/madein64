@@ -23,6 +23,8 @@ var app = {
         backFocus: false,
     },
     yandexKey: 'b55a6bc2-55f2-4ab4-afcb-34c0d6fe6d2c',
+    minicartTimeout: 300,
+    minicartTimeoutId: null,
 
     init: function () {
         // read config
@@ -99,12 +101,14 @@ var app = {
         let $menuToggler = $('.js-m-menu__toggler');
         let $menu = $('.js-m-menu__menu');
         if ($dropdown.length) {
-            $toggler.on('click', function () {
-                $dropdown.toggleClass('_active');
+            $toggler.on('mouseenter', function () {
+                clearTimeout(app.minicartTimeoutId);
+                $dropdown.addClass('_active');
                 $menuToggler.removeClass('_active');
                 $menu.removeClass('_active');
                 app.body.removeClass('_frozen');
-                return false;
+            }).on('mouseleave', function () {
+                app.minicartTimeoutId = setTimeout(() => $dropdown.removeClass('_active'), app.minicartTimeout);
             });
             $dropdown.on('click', function (e) {
                 e.stopPropagation();

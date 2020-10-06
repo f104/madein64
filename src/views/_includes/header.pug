@@ -19,16 +19,16 @@ mixin header(options)
                             a.header__top__menu__link.js-popup(href="#login") Вход
                         li.header__top__menu__item
                             a.header__top__menu__link.js-popup(href="#register") Регистрация
-                    .header__cart
-                        span.header__cart__toggler.js-header-cart__toggler
+                    .header__cart.js-header-cart__toggler
+                        span.header__cart__toggler
                             i.icon-basket
-                            | Корзина:
+                            | Корзина: 
                             strong 2
                         .header__cart__dropdown.js-header-cart__dropdown
                             h5.header__cart__dropdown__h Корзина
                             .header__cart__dropdown__empty.hidden Вы пока ничего не выбрали.
                             .header__cart__dropdown__full
-                                ul.header__cart__dropdown__products
+                                div.header__cart__dropdown__products
                                     +product-item-header(
                                         title='Шампуры-самокруты МВШ-5'
                                         price='3500 ₽'
