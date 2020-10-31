@@ -3,7 +3,9 @@ import Choices from 'choices.js';
 import noUiSlider from 'nouislider';
 import 'slick-carousel';
 import 'lazysizes';
+import Inputmask from 'inputmask';
 import page from 'page';
+
 var app = {
 
     breakpoints: {
@@ -64,6 +66,7 @@ var app = {
             app.initBackTop();
             app.initShare();
             app.initMap();
+            app.initMask();
 
             app.body.addClass('_init');
         });
@@ -90,6 +93,28 @@ var app = {
             });
             $(this).data('choices', choices);
         })
+    },
+
+    initMask() {
+        const selector = document.querySelectorAll('input[type="tel"]');
+        // подмена восьмерки, подстановка +7, городские номера
+        Inputmask({
+            mask: '+7 (999) 999-99-99',
+            postValidation: function (buffer, pos, c, currentResult, opts, maskset, strict, fromCheckval) {
+                // console.log(pos, c)
+                if (pos === 0 && ['0', '8'].indexOf(c) !== -1) {
+                    return {
+                        remove: 4
+                    };
+                }
+                if (pos === 4 && c === '0') {
+                    return false;
+                }
+                return true;
+            },
+            showMaskOnHover: false,
+            jitMasking: true,
+        }).mask(selector);
     },
 
     /**
@@ -390,9 +415,10 @@ var app = {
     },
 
     initToggleHidden() {
-        let className = 'hidden';
+        const className = 'hidden';
         this.document.on('click', '.js-toggle-hidden__toggler', function () {
             let targetSelector = $(this).data('toggle');
+            console.log(targetSelector)
             if (targetSelector) {
                 let $items = $(this).parents('.js-toggle-hidden').find('.js-toggle-hidden__item').addClass(className);
                 $items.filter(targetSelector).removeClass(className);

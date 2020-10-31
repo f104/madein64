@@ -1,6 +1,9 @@
 mixin checkout-radio()
     label.checkout-radio
-        input(type="radio" checked=attributes.checked name=attributes.name data-toggle="[data-delivery='"+attributes.id+"']").js-toggle-hidden__toggler
+        if attributes.id
+            input(type="radio" checked=attributes.checked name=attributes.name data-toggle="[data-delivery-"+attributes.id+"]").js-toggle-hidden__toggler
+        else
+            input(type="radio" checked=attributes.checked name=attributes.name)
         span.checkout-radio__inner
             span.checkout-radio__h= attributes.title
             span.checkout-radio__text!= attributes.text

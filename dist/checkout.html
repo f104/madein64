@@ -182,7 +182,7 @@
                   </div>
                   <div class="input-group _required">
                     <label for="checkout_phone">Телефон</label>
-                    <input type="text" id="checkout_phone" placeholder="Может потребоваться для уточнения параметров заказа" name="phone" required>
+                    <input type="tel" id="checkout_phone" placeholder="Может потребоваться для уточнения параметров заказа" name="phone" required>
                   </div>
                   <div class="input-group">
                     <label for="checkout_comment">Комментарий</label>
@@ -204,27 +204,27 @@
               <div class="checkout__section__row">
                 <div class="checkout__section__col">
                   <label class="checkout-radio">
-                    <input class="js-toggle-hidden__toggler" type="radio" checked="checked" name="delivery" data-toggle="[data-delivery='1']"/><span class="checkout-radio__inner"><span class="checkout-radio__h">СДЭК</span><span class="checkout-radio__text">Доставка транспортной компанией по России. Возможна доставка непосредственно «до двери». Стоимость рассчитывается автоматически во время оформления заказа. Отгрузка товара осуществляется в течение пяти рабочих дней.</span>
+                    <input class="js-toggle-hidden__toggler" type="radio" checked="checked" name="delivery" data-toggle="[data-delivery-1]"/><span class="checkout-radio__inner"><span class="checkout-radio__h">СДЭК</span><span class="checkout-radio__text">Доставка транспортной компанией по России. Возможна доставка непосредственно «до двери». Стоимость рассчитывается автоматически во время оформления заказа. Отгрузка товара осуществляется в течение пяти рабочих дней.</span>
                       <picture class="checkout-radio__img">
                         <source type="image/webp" data-source="assets/img/checkout/sdek.webp"/>
                         <source type="image/png" data-source="assets/img/checkout/sdek.png"/><img class="lazyload" data-src="assets/img/checkout/sdek.png" alt="СДЭК"/>
                       </picture></span>
                   </label>
                   <label class="checkout-radio">
-                    <input class="js-toggle-hidden__toggler" type="radio" name="delivery" data-toggle="[data-delivery='2']"/><span class="checkout-radio__inner"><span class="checkout-radio__h">Почтовая доставка</span><span class="checkout-radio__text">Доставка в любой регион мира до почтового отделения. Стоимость рассчитывается <a href="https://www.pochta.ru/support/post-rules/tariffs" target="_blank">по&nbsp;тарифам Почты России</a> автоматически во время оформления заказа. Отгрузка товара осуществляется в&nbsp;течение пяти рабочих дней.</span>
+                    <input class="js-toggle-hidden__toggler" type="radio" name="delivery" data-toggle="[data-delivery-2]"/><span class="checkout-radio__inner"><span class="checkout-radio__h">Почтовая доставка</span><span class="checkout-radio__text">Доставка в любой регион мира до почтового отделения. Стоимость рассчитывается <a href="https://www.pochta.ru/support/post-rules/tariffs" target="_blank">по&nbsp;тарифам Почты России</a> автоматически во время оформления заказа. Отгрузка товара осуществляется в&nbsp;течение пяти рабочих дней.</span>
                       <picture class="checkout-radio__img">
                         <source type="image/webp" data-source="assets/img/checkout/rp.webp"/>
                         <source type="image/png" data-source="assets/img/checkout/rp.png"/><img class="lazyload" data-src="assets/img/checkout/rp.png" alt="Почтовая доставка"/>
                       </picture></span>
                   </label>
                   <label class="checkout-radio">
-                    <input class="js-toggle-hidden__toggler" type="radio" name="delivery" data-toggle="[data-delivery='3']"/><span class="checkout-radio__inner"><span class="checkout-radio__h">EMS – курьерская служба Почты России</span><span class="checkout-radio__text">EMS Почта России — филиал ФГУП «Почта России», оператор экспресс-доставки. Входит в мировую систему EMS, созданную в 1989 году в рамках Всемирного почтового союза и объединяющую национальные службы экспресс-доставки 192 стран.</span><img class="lazyload checkout-radio__img" data-src="assets/img/checkout/ems.png" alt="EMS – курьерская служба Почты России"/></span>
+                    <input class="js-toggle-hidden__toggler" type="radio" name="delivery" data-toggle="[data-delivery-3]"/><span class="checkout-radio__inner"><span class="checkout-radio__h">EMS – курьерская служба Почты России</span><span class="checkout-radio__text">EMS Почта России — филиал ФГУП «Почта России», оператор экспресс-доставки. Входит в мировую систему EMS, созданную в 1989 году в рамках Всемирного почтового союза и объединяющую национальные службы экспресс-доставки 192 стран.</span><img class="lazyload checkout-radio__img" data-src="assets/img/checkout/ems.png" alt="EMS – курьерская служба Почты России"/></span>
                   </label>
                   <label class="checkout-radio">
-                    <input class="js-toggle-hidden__toggler" type="radio" name="delivery" data-toggle="[data-delivery='4']"/><span class="checkout-radio__inner"><span class="checkout-radio__h">Самовывоз</span><span class="checkout-radio__text">Вы&nbsp;можете самостоятельно получить заказ на&nbsp;нашем складе в&nbsp;Саратове. Адрес и&nbsp;схема проезда указана в разделе <a href="contacts">«Контактная информация»</a>.</span></span>
+                    <input class="js-toggle-hidden__toggler" type="radio" name="delivery" data-toggle="[data-delivery-4]"/><span class="checkout-radio__inner"><span class="checkout-radio__h">Самовывоз</span><span class="checkout-radio__text">Вы&nbsp;можете самостоятельно получить заказ на&nbsp;нашем складе в&nbsp;Саратове. Адрес и&nbsp;схема проезда указана в разделе <a href="contacts">«Контактная информация»</a>.</span></span>
                   </label>
                   <label class="checkout-radio">
-                    <input class="js-toggle-hidden__toggler" type="radio" name="delivery" data-toggle="[data-delivery='5']"/><span class="checkout-radio__inner"><span class="checkout-radio__h">Курьерская доставка</span><span class="checkout-radio__text">В Саратове и Энгельсе мы осуществляем бесплатную курьерскую доставку товаров. Время доставки согласовывается предварительно по телефону.</span></span>
+                    <input class="js-toggle-hidden__toggler" type="radio" name="delivery" data-toggle="[data-delivery-5]"/><span class="checkout-radio__inner"><span class="checkout-radio__h">Курьерская доставка</span><span class="checkout-radio__text">В Саратове и Энгельсе мы осуществляем бесплатную курьерскую доставку товаров. Время доставки согласовывается предварительно по телефону.</span></span>
                   </label>
                 </div>
                 <div class="checkout__section__col"></div>
@@ -234,7 +234,7 @@
               <h3 class="checkout__h">Адрес доставки</h3>
               <div class="checkout__section__row">
                 <div class="checkout__section__col">
-                  <div class="input-group _required _loading js-toggle-hidden__item" data-delivery="1">
+                  <div class="input-group _required _loading js-toggle-hidden__item" data-delivery-1 data-delivery-5>
                     <label for="checkout_sdek_city">Город доставки</label>
                     <input class="js-cdek-autocomplete" type="text" id="checkout_sdek_city" name="sdek_city"><span class="input-group__msg">Начните набирать название города.</span>
                   </div>
@@ -259,7 +259,7 @@
                     <label for="checkout_city">Город</label>
                     <input type="text" id="checkout_city" name="city" disabled>
                   </div>
-                  <div class="input-group _required js-toggle-hidden__item" data-delivery="5">
+                  <div class="input-group _required js-toggle-hidden__item" data-delivery-5>
                     <label for="checkout_address">Адрес</label>
                     <input type="text" id="checkout_address" name="address" required>
                   </div>
@@ -274,21 +274,21 @@
               <div class="checkout__section__row">
                 <div class="checkout__section__col">
                   <label class="checkout-radio">
-                    <input class="js-toggle-hidden__toggler" type="radio" checked="checked" name="payment" data-toggle="[data-delivery='undefined']"/><span class="checkout-radio__inner"><span class="checkout-radio__h">Яндекс.Касса</span><span class="checkout-radio__text">Оплата с произвольной банковской карты, из кошелька в Яндекс.Деньгах и системе WebMoney, наличными через терминалы, через Альфа-Клик, через интернет-банк Промсвязьбанка, через QIWI Wallet, наличными за пределами России.</span>
+                    <input type="radio" checked="checked" name="payment"/><span class="checkout-radio__inner"><span class="checkout-radio__h">Яндекс.Касса</span><span class="checkout-radio__text">Оплата с произвольной банковской карты, из кошелька в Яндекс.Деньгах и системе WebMoney, наличными через терминалы, через Альфа-Клик, через интернет-банк Промсвязьбанка, через QIWI Wallet, наличными за пределами России.</span>
                       <picture class="checkout-radio__img">
                         <source type="image/webp" data-source="assets/img/checkout/yk.webp"/>
                         <source type="image/png" data-source="assets/img/checkout/yk.png"/><img class="lazyload" data-src="assets/img/checkout/yk.png" alt="Яндекс.Касса"/>
                       </picture></span>
                   </label>
                   <label class="checkout-radio">
-                    <input class="js-toggle-hidden__toggler" type="radio" name="payment" data-toggle="[data-delivery='undefined']"/><span class="checkout-radio__inner"><span class="checkout-radio__h">PayPal</span><span class="checkout-radio__text">Мировой лидер онлайн-платежей. Миллионы покупателей пользуются PayPal по одной причине: это удобно. Для оплаты нужен только электронный адрес и пароль – это быстрее, чем достать бумажник.</span>
+                    <input type="radio" name="payment"/><span class="checkout-radio__inner"><span class="checkout-radio__h">PayPal</span><span class="checkout-radio__text">Мировой лидер онлайн-платежей. Миллионы покупателей пользуются PayPal по одной причине: это удобно. Для оплаты нужен только электронный адрес и пароль – это быстрее, чем достать бумажник.</span>
                       <picture class="checkout-radio__img">
                         <source type="image/webp" data-source="assets/img/checkout/pp.webp"/>
                         <source type="image/png" data-source="assets/img/checkout/pp.png"/><img class="lazyload" data-src="assets/img/checkout/pp.png" alt="PayPal"/>
                       </picture></span>
                   </label>
                   <label class="checkout-radio">
-                    <input class="js-toggle-hidden__toggler" type="radio" name="payment" data-toggle="[data-delivery='undefined']"/><span class="checkout-radio__inner"><span class="checkout-radio__h">Наложенный платеж</span><span class="checkout-radio__text">Оплата товара при получении.<br>Почта России взимает комиссию за наложенный платеж. Сумма комиссии зависит от стоимости заказа и составляет от 2% (но не менее 50 рублей).</span></span>
+                    <input type="radio" name="payment"/><span class="checkout-radio__inner"><span class="checkout-radio__h">Наложенный платеж</span><span class="checkout-radio__text">Оплата товара при получении.<br>Почта России взимает комиссию за наложенный платеж. Сумма комиссии зависит от стоимости заказа и составляет от 2% (но не менее 50 рублей).</span></span>
                   </label>
                 </div>
                 <div class="checkout__section__col"></div>
