@@ -5,8 +5,10 @@ mixin vendor-intro()
             p.vendor-intro__desc= attributes.desc
             if (attributes.btnText)
                 .vendor-intro__btn
-                    a.btn._primary(href=attributes.url)
+                    a.btn._red._lg(href=attributes.url)
                         span.btn__inner= attributes.btnText
+                            | 
+                            | →
         .vendor-intro__bg
             picture.vendor-intro__bg__pictire
                 source(type="image/webp" srcset=attributes.bg + '.webp')

@@ -24,6 +24,10 @@ block content
                     del.product__price__old 4100 ₽
                     | 4400 ₽
                 p.product__desc Набор из семи шампуров. Сочетает компактные размеры и возможность приготовить большую порцию шашлыка.
+                label.checkbox._black(style="margin-bottom: 1rem")
+                    input(type="checkbox" name="options[nohoney]" value="без мёда")
+                    span.checkbox__text
+                        span.checkbox__text__inner В нашей пастиле есть капля мёда. Поставьте здесь галочку, если вам нужна пастила без мёда.
                 form.product__form
                     +product-qty
                     button.btn._primary 

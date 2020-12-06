@@ -13,6 +13,7 @@
     cursor: pointer;
     overflow: hidden;
     @include transition(color);
+
     /*white-space: nowrap;*/
     &:before {
         content: '';
@@ -24,49 +25,76 @@
         background-color: $color-primary;
         @include transition(width);
     }
+
     @include hover-desktop {
         color: $color-white;
+
         &:before {
             width: 100%;
         }
     }
+
     &:disabled {
         pointer-events: none;
         opacity: .5;
     }
+
+    &._lg {
+        font-size: 1.3rem;
+        font-weight: normal;
+    }
+
     &._primary {
         background-color: $color-primary;
         color: $color-white;
+
         &:before {
             background-color: $color-heading;
         }
     }
+
     &._secondary {
         background-color: $color-secondary;
         color: $color-white;
+
         &:before {
             background-color: $color-primary;
         }
     }
+
     &._danger {
         &:before {
             background-color: $color-danger;
         }
     }
+
+    &._red {
+        background-color: $color-red;
+        color: $color-white;
+
+        &:before {
+            background-color: $color-heading;
+        }
+    }
+
     &._ondark {
         color: $color-primary;
+
         &:before {
             background-color: $color-primary-dark;
         }
+
         @include hover-desktop {
             color: $color-white;
         }
     }
+
     &._round {
         border-radius: 50%;
         width: 3rem;
         height: 3rem;
         padding: 0;
+
         #{$root} {
             &__inner {
                 display: flex;
@@ -75,6 +103,7 @@
                 align-items: center;
             }
         }
+
         [class^="icon-"] {
             top: -.1rem;
         }

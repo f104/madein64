@@ -1,9 +1,17 @@
 .checkbox {
     $root: &;
     display: block;
+    text-align: left;
+
+    &._sm {
+        font-size: 70%;
+    }
+
     &__text {
         cursor: pointer;
         padding-left: 1.5rem;
+        display: inline-block;
+
         &:before {
             content: '';
             position: absolute;
@@ -14,7 +22,11 @@
             border-radius: .2rem;
             background-color: $color-white;
             border: 1px solid $color-gray-dark;
+            #{$root}._sm & {
+                top: 0;
+            }
         }
+
         &:after {
             font-family: fontello;
             font-size: .9rem;
@@ -25,20 +37,32 @@
             top: .2rem;
             opacity: 0;
             @include transition(opacity);
+            #{$root}._sm & {
+                top: 0;
+            }
         }
+
         &__inner {
             color: $color-primary;
             @include transition(color);
+
+            #{$root}._black & {
+                color: $color-text;
+            }
         }
+
         @include hover-desktop {
             #{$root}__text__inner {
                 color: $color-heading;
             }
         }
+
     }
+
     input {
         display: none !important;
-        &:checked + #{$root}__text:after {
+
+        &:checked+#{$root}__text:after {
             opacity: 1;
         }
     }
