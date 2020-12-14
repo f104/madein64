@@ -176,31 +176,28 @@ var app = {
      * Init share
      */
     initShare() {
-        var share = {
+        let share = {
             vkontakte: function (purl, ptitle, pimg, text) {
-                var url = 'http://vkontakte.ru/share.php?';
+                let url = 'http://vkontakte.ru/share.php?';
                 url += 'url=' + encodeURIComponent(purl);
-                url += '&title=' + encodeURIComponent(ptitle);
-                url += '&description=' + encodeURIComponent(text);
-                url += '&image=' + encodeURIComponent(pimg);
-                url += '&noparse=true';
+                // url += '&title=' + encodeURIComponent(ptitle);
+                // url += '&description=' + encodeURIComponent(text);
+                // url += '&image=' + encodeURIComponent(pimg);
+                // url += '&noparse=true';
                 share.popup(url);
             },
             odnoklassniki: function (purl) {
-                var url = 'https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki';
+                let url = 'https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki';
                 url += '&st.shareUrl=' + encodeURIComponent(purl);
                 share.popup(url);
             },
-            facebook: function (purl, ptitle, pimg, text) {
-                var url = 'http://www.facebook.com/sharer.php?s=100';
-                url += '&p[title]=' + encodeURIComponent(ptitle);
-                url += '&p[summary]=' + encodeURIComponent(text);
-                url += '&p[url]=' + encodeURIComponent(purl);
-                url += '&p[images][0]=' + encodeURIComponent(pimg);
+            facebook: function (purl) {
+                let url = 'http://www.facebook.com/sharer.php?';
+                url += 'u=' + encodeURIComponent(purl);
                 share.popup(url);
             },
             twitter: function (purl, ptitle) {
-                var url = 'http://twitter.com/share?';
+                let url = 'http://twitter.com/share?';
                 url += 'text=' + encodeURIComponent(ptitle);
                 url += '&url=' + encodeURIComponent(purl);
                 share.popup(url);
